@@ -1,0 +1,93 @@
+:root {
+	--main-bg: #1a1b26;
+	--second-bg: #24283b;
+	--main-fg: #c0caf5;
+
+	--button: #7aa2f7;
+	--red: #f7768e;
+	--green: #9ece6a;
+}
+
+body, .lobby__app__content {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.puzzle__side__user, .puzzle__side__metas, .puzzle__side__theme, .puzzle__side__config,
+.puzzle__feedback, .tview2-column > index, .tour-spotlight, .game__meta, .mchat__content, .mchat__tab-active {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.tview2 move {
+	background: var(--main-bg) !important;
+}
+
+.tview2-column > index {
+	color: var(--main-fg) !important;
+}
+
+.button {
+	background: var(--button) !important;
+	color: #fff !important;
+}
+
+.puzzle__session a.result-false {
+	background: var(--red) !important;
+}
+
+.puzzle__session a.result-true, .fbt:hover:not(.disabled):not([disabled]) {
+	background: var(--green) !important;
+}
+
+input, textarea, select {
+	background: var(--main-bg) !important;
+	color: var(--main-fg)
+}
+
+.tview2-column > index, .puzzle__moves, .lpools > div {
+	border-color: var(--main-fg) !important;
+}
+
+.puzzle__controls .fbt {
+	color: var(--main-fg) !important;
+}
+
+.tview2 {
+	background: var(--main-bg) !important;
+}
+
+.tview2 move.good {
+	color: var(--green) !important;
+}
+
+.site-title span, .site-title a, #topnav section > a {
+	color: var(--main-fg) !important;
+}
+
+#topnav.hover section:hover > a, #topnav section:active > a, #topnav div {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.user-link {
+	color: var(--main-fg) !important;
+}
+
+.puzzle__moves .areplay {
+	background: var(--main-bg) !important;
+}
+
+.tview2-column > interrupt {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+	border-color: var(--main-fg) !important;
+}
+
+.puzzle__session a.result-false {
+	background: var(--green) !important;
+}
+
+.puzzle__session a.result-false.result-empty::before {
+	content: "" !important;
+}

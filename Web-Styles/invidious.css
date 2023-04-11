@@ -1,0 +1,224 @@
+:root {
+    --bg: #1a1b26;
+    --fg: #c0caf5;
+    --hover: #7aa2f7;
+    --subscribe: #f7768e;
+    --link: #9ece6a;
+
+	--blue: #7aa2f7;
+	--gray: #414868;
+}
+
+.pure-u-1 {
+    float: right;
+    height: fit-content;
+}
+
+div.pure-u-lg-1-5:nth-child(1) {
+	margin-right: 100%
+}
+
+div.pure-u-lg-1-5:nth-child(1) p, 
+div.pure-u-lg-1-5:nth-child(1) i 
+{
+	display: inline-block;
+}
+
+#views p, #likes p {
+	margin: 0px !important;
+}
+
+div.pure-u-lg-1-5:nth-child(1) .h-box {
+	width: 500% !important;
+}
+div.pure-u-lg-1-5:nth-child(1) *:not(a){
+	padding-right: 10px;
+}
+
+div.pure-u-lg-1-5:nth-child(2) {
+    max-width: 100%;
+}
+
+
+.length, .watched, #filters-box {
+    background-color: var(--bg) !important;
+}
+
+button.pure-button-primary,
+body a.pure-button-primary,
+.channel-owner:hover {
+  background-color: #a0a0a0 !important;
+  color: var(--bg) !important;
+}
+
+
+html body.no-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g div.pure-u-1.pure-u-lg-3-5 div.h-box div#comments div div.pure-g div.pure-u-20-24.pure-u-md-22-24 div#replies.pure-g div.pure-u-23-24 p{
+    margin: 0px !important;
+    margin-bottom: 15px !important;
+}
+
+
+.pure-u-1-24, #family_friendly, 
+#license, #genre, a[data-comments="reddit"], 
+#download,
+div.pure-u-md-2-24:nth-child(1):not(.channel-profile), 
+div.pure-u-md-2-24:nth-child(3),
+#annotations{
+    display: none !important;
+}
+
+.channel-profile {
+	width: 60px !important;
+}
+
+html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g.h-box div.pure-u-2-3 div.channel-profile {
+	width: 100% !important;
+}
+
+#contents .h-box:nth-child(2) > h3:nth-child(1){
+	display: none !important;
+}
+.pure-u-lg-3-5 > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) {
+	width: fit-content !important;
+}
+
+html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g div.pure-u-1.pure-u-lg-3-5 div.h-box div#comments div div.pure-g div.channel-profile.pure-u-4-24.pure-u-md-2-24 {
+	margin-right: 15px;
+}
+
+#likes, #views {
+    float:left !important;
+    margin-left: 5px !important;
+}
+
+.channel-profile * {
+/*     border-radius: 90% !important; */
+}
+
+h5.pure-g {
+    margin: 0px !important;
+    margin-bottom: 15px !important;
+}
+
+hr {
+    color: var(--fg) !important;
+}
+
+.pure-g {
+    background-color: var(--bg) !important;
+    color: var(--fg) !important;
+}
+
+a:hover, .dark-theme a:hover, .dark-theme a:active, .dark-theme summary:hover {
+    color: var(--hover) !important;
+} a {
+    color: var(--link) !important;
+}
+
+.pure-u-1 .pure-u-lg-1-5 .h-box a p:not(.length){
+    margin: 10px 0px;
+}
+
+.thumbnail img {
+    border-radius: 7px;
+}
+
+button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widget {
+	border: 0px;
+	-webkit-box-shadow: inset 0 0px 0px #dddddd00 !important;
+	background-color: var(--subscribe) !important;
+}
+
+.vjs-playback-rate {
+    color: var(--fg) !important;
+}
+.pure-input-1 {
+    background-color: var(--bg) !important;
+    border: 1px solid var(--fg) !important;
+    color: var(--fg) !important;
+}
+
+.pure-u-1 .pure-u-md-1-3 a {
+    color: var(--fg) !important;
+}
+
+#player-container {
+	width: 100%;
+}
+
+/* #player_html5_api {
+	max-height: 800px !important;
+} */
+
+.pure-u-md-20-24, .pure-u-md-5-6 {
+	width:  calc(100% - 2em);
+}
+
+div.pure-u-lg-1-5:nth-child(3){
+	margin-left: auto !important;
+	margin-top: -100px !important;
+}
+
+.pure-u-lg-3-5 {
+	width: 80%;
+}
+
+div.pure-u-md-1-4{
+	width: calc(100%/5) !important;
+}
+
+#download_widget {
+	width: 33% !important;
+}
+
+.vjs-control-bar {
+	background: var(--bg) !important;
+	color: var(--fg) !important;
+}
+
+#searchbox {
+	border-color: rgba(0,0,0,0);
+  	border-bottom-color: var(--fg);
+}
+
+.video-js.player-style-invidious .vjs-play-progress {
+	background-color: var(--blue);
+}
+
+.video-js .vjs-load-progress,
+.video-js .vjs-load-progress div {
+	background-color: var(--gray);
+}
+
+form[action="/download"] {
+	display: none !important;
+}
+
+a[title="Audio mode"] {
+	margin-left: 15px !important;
+}
+
+div.h-box:nth-child(5) > h1:nth-child(1) {
+	max-width: 55ch !important;
+}
+
+#player {
+	max-height: 800px !important;
+}
+
+@media all and (display-mode: fullscreen) {
+ 	#player {
+		width: 100% !important;
+	}
+}
+
+/* @media only screen and (max-aspect-ratio: 16 / 9) {
+	#player-container {
+		padding-bottom: auto !important;
+	}
+} */
+
+
+div.h-box:nth-child(4) > h1:nth-child(1) {
+	margin-bottom: 0px !important;
+}

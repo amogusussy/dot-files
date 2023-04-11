@@ -1,0 +1,13 @@
+:root {
+  --accent: #89b4fa !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #313244 !important;
+  --background: #11111b !important;
+  --outside: #1e1e2e !important;
+  --post: #181825 !important;
+  --panel-border: 1px solid #89b4fa !important;
+  --highlighted: var(--background) !important;
+  --visited: #aaa !important;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}

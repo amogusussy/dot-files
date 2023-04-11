@@ -1,0 +1,150 @@
+:root {
+  --color-base-font: #acb0d0 !important;
+  --color-base-font-rgb: 189,193,198 !important;
+  --color-base-background: #16161f !important;
+  --color-base-background-mobile: #1a1b27 !important;
+  --color-url-font: #7aa2f7 !important;
+  --color-url-visited-font: #bb9af7 !important;
+  --color-header-background: #16161f !important;
+  --color-header-border: #9aa5ce !important;
+  --color-footer-background: #1a1b27 !important;
+  --color-footer-border: #9aa5ce !important;
+  --color-sidebar-border: #9aa5ce !important;
+  --color-sidebar-font: #959cbd !important;
+  --color-sidebar-background: #1a1b27 !important;
+  --color-backtotop-font: #acb0d0 !important;
+  --color-backtotop-border: #9aa5ce !important;
+  --color-backtotop-background: #1a1b27 !important;
+  --color-btn-background: #7aa2f7 !important;
+  --color-btn-font: #16161f !important;
+  --color-show-btn-background: #1a1b27 !important;
+  --color-show-btn-font: #acb0d0 !important;
+  --color-search-border: transparent !important;
+  --color-search-shadow: 0 1px 3px rgba(26,27,38, 0.24) !important;
+  --color-search-shadow-hover: 0 4px 12px rgba(26,27,38, 0.9) !important;
+  --color-search-background: #1a1b27 !important;
+  --color-search-font: #959cbd !important;
+  --color-search-background-hover: #7aa2f7 !important;
+  --color-error: #f55b5b !important;
+  --color-error-background: #390a0a !important;
+  --color-warning: #f1d561 !important;
+  --color-warning-background: #39300a !important;
+  --color-success: #79f56e !important;
+  --color-success-background: #0e390a !important;
+  --color-categories-item-selected-font: #7aa2f7 !important;
+  --color-categories-item-border-selected: #7aa2f7 !important;
+  --color-autocomplete-font: #959cbd !important;
+  --color-autocomplete-border: transparent !important;
+  --color-autocomplete-shadow: 0 4px 12px rgba(26,27,38, 0.9) !important;
+  --color-autocomplete-background: #1a1b27 !important;
+  --color-autocomplete-background-hover: #1a1b27 !important;
+  --color-answer-font: #959cbd !important;
+  --color-answer-background: #1a1b27 !important;
+  --color-result-background: #16161f !important;
+  --color-result-border: #9aa5ce !important;
+  --color-result-url-font: #acb0d0 !important;
+  --color-result-vim-selected: #1a1b27 !important;
+  --color-result-vim-arrow: #7aa2f7 !important;
+  --color-result-description-highlight-font: #acb0d0 !important;
+  --color-result-link-font: #7aa2f7 !important;
+  --color-result-link-font-highlight: #7aa2f7 !important;
+  --color-result-link-visited-font: #bb9af7 !important;
+  --color-result-publishdate-font: #acb0d0 !important;
+  --color-result-engines-font: #acb0d0 !important;
+  --color-result-search-url-border: #9aa5ce !important;
+  --color-result-search-url-font: #959cbd !important;
+  --color-result-detail-font: #959cbd !important;
+  --color-result-detail-label-font: lightgray !important;
+  --color-result-detail-background: #000 !important;
+  --color-result-detail-hr: #9aa5ce !important;
+  --color-result-detail-link: #7aa2f7 !important;
+  --color-result-detail-loader-border: rgba(255, 255, 255, 0.2) !important;
+  --color-result-detail-loader-borderleft: rgba(0, 0, 0, 0) !important;
+  --color-result-image-span-font: #acb0d0 !important;
+  --color-result-image-span-font-selected: #16161f !important;
+  --color-result-image-background: #16161f !important;
+  --color-settings-tr-hover: #9aa5ce !important;
+  --color-settings-engine-description-font: #acb0d0 !important;
+  --color-settings-engine-group-background: #1a1b27 !important;
+  --color-toolkit-badge-font: #16161f !important;
+  --color-toolkit-badge-background: #acb0d0 !important;
+  --color-toolkit-kbd-font: #000 !important;
+  --color-toolkit-kbd-background: #959cbd !important;
+  --color-toolkit-dialog-border: #9aa5ce !important;
+  --color-toolkit-dialog-background: #16161f !important;
+  --color-toolkit-tabs-label-border: #16161f !important;
+  --color-toolkit-tabs-section-border: #9aa5ce !important;
+  --color-toolkit-select-background: #1a1b27 !important;
+  --color-toolkit-select-border: #555 !important;
+  --color-toolkit-select-background-hover: #9aa5ce !important;
+  --color-toolkit-input-text-font: #959cbd !important;
+  --color-toolkit-checkbox-onoff-off-background: #1a1b27 !important;
+  --color-toolkit-checkbox-onoff-on-background: #1a1b27 !important;
+  --color-toolkit-checkbox-onoff-on-mark-background: #7aa2f7 !important;
+  --color-toolkit-checkbox-onoff-on-mark-color: #16161f !important;
+  --color-toolkit-checkbox-onoff-off-mark-background: #acb0d0 !important;
+  --color-toolkit-checkbox-onoff-off-mark-color: #16161f !important;
+  --color-toolkit-checkbox-label-background: #16161f !important;
+  --color-toolkit-checkbox-label-border: #9aa5ce !important;
+  --color-toolkit-checkbox-input-border: #7aa2f7 !important;
+  --color-toolkit-engine-tooltip-border: #9aa5ce !important;
+  --color-toolkit-engine-tooltip-background: #16161f !important;
+  --color-toolkit-loader-border: rgba(0, 0, 0, 0.2) !important;
+  --color-toolkit-loader-borderleft: rgba(255, 255, 255, 0) !important;
+  --color-doc-code: #16161f !important;
+  --color-doc-code-background: #7aa2f7 !important;
+}
+
+@media only screen and (max-width: 1080px){
+    #results {
+        justify-content: left !important;
+		display: block !important;
+    }
+
+    #urls, article {
+		margin: 20px 30px; 
+	}
+	
+	#sidebar {
+		display: none !important;
+	}
+	.center-aligment-no #main_results div#results {
+		margin: 0px !important;
+	}
+	
+}
+
+
+.result.wikipedia, 
+#search_url,
+#result_count,
+.category:nth-child(10),
+.category:nth-child(6),
+#backToTop{
+	display: none;
+}
+
+.autocomplete.open {
+	margin-top: 3rem !important;
+	border-radius: 0px 0px .8rem .8rem;
+}
+
+input#q:focus {
+	border-radius: 1.5em 0 0 0 !important;
+}
+
+input#q:focus ~ button#send_search {
+	border-radius: 0 1.5em 0 0;
+}
+
+.autocomplete ul li:hover {
+	background: #16161fcf;
+}
+
+tr:hover {
+	color: #1a1b27;
+}
+
+.engine-description {
+	color: #9aa5ce !important;
+}
