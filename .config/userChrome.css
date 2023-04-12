@@ -1,0 +1,72 @@
+.tab-background {
+  outline: none !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+}
+
+.tab-background[selected="true"]{
+  border-top: 1px solid var(--lwt-tab-line-color) !important;
+}
+
+tab {
+  padding: 0px !important;;
+}
+
+#alltabs-button,
+#appMenu-fxa-status2,
+#appMenu-fxa-separator,
+#appMenu-print-button2,
+#appMenu-find-button2,
+#appMenu-passwords-button,
+#appMenu-quit-button2,
+#appMenu-protonMainView toolbarseparator:nth-child(23),
+#fullscreen-warning,
+#context-inspect-a11y
+{
+  display: none !important;
+}
+.titlebar-spacer {
+  width: 20px !important;;
+}
+
+#urlbar-container {
+  padding: 3px !important;
+}
+
+
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+  height: fit-content !important;
+}
+/* 
+.tab-secondary-label {
+  margin: 0px !important;;
+} */
+/* 
+
+.tab-label {
+  line-height: 1 !important;
+}
+
+.tab-throbber:not([pinned]), .tab-icon-pending:not([pinned]), .tab-icon-image:not([pinned]), .tab-sharing-icon-overlay:not([pinned]), .tab-icon-overlay:not([pinned]), .tab-icon-overlay {
+  margin-inline-end: 3px !important;
+} */
+
+@-moz-document url(chrome://browser/content/browser.xul)
+{
+
+  #main-window,
+  browser[type="content-primary"],
+  browser[type="content"],
+  tabbrowser#content,
+  #content,
+  browser[type="content"] > html
+  {
+     background: #323234 !important;
+  }
+
+}
+
+
+#_testpilot-containers-menuitem-5 {
+  display: none !important;
+}
