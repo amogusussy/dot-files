@@ -398,6 +398,7 @@ centeredfloatingmaster(Monitor *m)
  * Deck layout + gaps
  * https://dwm.suckless.org/patches/deck/
  */
+#if 0
 void
 deck(Monitor *m)
 {
@@ -438,6 +439,7 @@ deck(Monitor *m)
 			resize(c, sx, sy, sw - (2*c->bw), sh - (2*c->bw), 0);
 		}
 }
+#endif
 
 /*
  * Fibonacci layout + gaps
@@ -546,6 +548,7 @@ spiral(Monitor *m)
  * Gappless grid layout + gaps (ironically)
  * https://dwm.suckless.org/patches/gaplessgrid/
  */
+#if 0
 void
 gaplessgrid(Monitor *m)
 {
@@ -751,6 +754,7 @@ nrowgrid(Monitor *m)
 		resize(c, cx, cy, cw - (2*c->bw), ch - (2*c->bw), 0);
 	}
 }
+#endif
 
 /*
  * Default tile layout + gaps

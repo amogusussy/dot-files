@@ -30,8 +30,6 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *light_up[] = {"/usr/bin/light", "-A", "5", NULL};
-static const char *light_down[] = {"/usr/bin/light", "-U", "5", NULL};
 // static const char *mpv[] = {"/bin/mpv $(zenity --entry)"};
 static const int new_window_attach_on_end = 0; /*  1 means the new window will attach on the end; 0 means the new window will attach on the front,default is front */
 #define ICONSIZE 19   /* icon size */
@@ -103,17 +101,22 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
+    { "[@]",      spiral },
     { "[]=",      tile },    /* first entry is default */
     { "[M]",      monocle },
-    { "[@]",      spiral },
     { "[\\]",     dwindle },
-    { "H[]",      deck },
+    // { "H[]",      deck },
+    { " ",        NULL},
     { "TTT",      bstack },
     { "===",      bstackhoriz },
-    { "HHH",      grid },
-    { "###",      nrowgrid },
-    { "---",      horizgrid },
-    { ":::",      gaplessgrid },
+    { " ",        NULL},
+    { " ",        NULL},
+    { " ",        NULL},
+    { " ",        NULL},
+    // { "HHH",      grid },
+    // { "###",      nrowgrid },
+    // { "---",      horizgrid },
+    // { ":::",      gaplessgrid },
     { "|M|",      centeredmaster },
     { ">M>",      centeredfloatingmaster },
     { "><>",      NULL },    /* no layout function means floating behavior */
@@ -137,16 +140,14 @@ static const Key keys[] = {
     /* modifier                         key         function        argument */
 
     // brightness and audio 
-    {0,                                 XF86XK_AudioLowerVolume,  spawn,  {.v = downvol}},
-	  {0,                                 XF86XK_AudioMute,         spawn,  {.v = mutevol }},
-	  {0,                                 XF86XK_AudioRaiseVolume,  spawn,  {.v = upvol}},
-	  {0,				                          XF86XK_MonBrightnessUp,		spawn,	{.v = light_up}},
-	  {0,				                          XF86XK_MonBrightnessDown,	spawn,	{.v = light_down}},
+    { MODKEY,                           XK_F11,                   spawn,  {.v = downvol } },
+	  { MODKEY,                           XK_F9,                    spawn,  {.v = mutevol } },
+	  { MODKEY,                           XK_F12,                   spawn,  {.v = upvol   } },
 
     // screenshot fullscreen and cropped
     { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},
     { MODKEY,                           XK_u,       spawn,            SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-    { MODKEY,                           XK_c,       spawn,            SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_space,   spawn,            SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
     { Mod1Mask,				                  XK_Delete,  spawn,		        SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
     { MODKEY,                           XK_a,  	    spawn,            SHCMD("pavucontrol")},
@@ -210,7 +211,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_m,       setlayout,      {.v = &layouts[2]}  },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
-    { MODKEY,                           XK_space,   setlayout,      {0}                 },
+    { MODKEY|ShiftMask,                 XK_c,       setlayout,      {0}                 },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 }          },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 }          },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 }         },

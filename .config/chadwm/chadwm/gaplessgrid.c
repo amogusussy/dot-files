@@ -1,3 +1,5 @@
+#if 0
+
 void
 gaplessgrid(Monitor *m) {
 	unsigned int n, cols, rows, cn, rn, i, cx, cy, cw, ch;
@@ -33,3 +35,4 @@ gaplessgrid(Monitor *m) {
 		}
 	}
 }
+#endif

@@ -764,13 +764,14 @@ void cleanupmon(Monitor *mon) {
 }
 
 void clientmessage(XEvent *e) {
-  XWindowAttributes wa;
-  XSetWindowAttributes swa;
+  // XWindowAttributes wa;
+  // XSetWindowAttributes swa;
   XClientMessageEvent *cme = &e->xclient;
   Client *c = wintoclient(cme->window);
 
   if (showsystray && cme->window == systray->win &&
       cme->message_type == netatom[NetSystemTrayOP]) {
+#if 0
     /* add systray icons */
     if (cme->data.l[1] == SYSTEM_TRAY_REQUEST_DOCK) {
       if (!(c = (Client *)calloc(1, sizeof(Client))))
@@ -824,6 +825,7 @@ void clientmessage(XEvent *e) {
       updatesystray();
       setclientstate(c, NormalState);
     }
+#endif
     return;
   }
   if (!c)
@@ -1636,7 +1638,7 @@ void
 drawtab(Monitor *m) {
 	Client *c;
 	int i;
-        char *btn_prev = "";
+  char *btn_prev = "";
 	char *btn_next = "";
 	char *btn_close = " ";
 	int buttons_w = 0;
