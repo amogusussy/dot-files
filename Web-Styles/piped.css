@@ -1,0 +1,86 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+.dark {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.dark .input, .dark .select, .dark .btn, .dark .pref:nth-child(2n+1), .dark footer,
+.dark .suggestions-container{
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+table, hr {
+	border-color: var(--grey) !important;
+}
+
+.shaka-bottom-controls {
+	padding: 0 0 1% !important;
+}
+
+.active {
+	border: var(--red) solid 2px !important;
+}
+
+.order-first > div:nth-child(3) > div {
+	margin-bottom: 15px !important;
+}
+
+.dark .suggestion-selected {
+	background: var(--main-bg)
+}
+
+.input {
+	border: 2px solid var(--second-bg);
+}
+
+.input::placeholder {
+	color: var(--main-fg) !important;
+	opacity: 0.7 !important;
+}
+
+.input:focus {
+	border-color: var(--red) !important;
+	box-shadow: 0 0 15px var(--red) !important;
+	box-shadow: none !important;
+}
+
+.shaka-overflow-menu, .shaka-settings-menu {
+	box-shadow: none !important;
+}
+
+a:hover, a *:hover, a:active, a *:active {
+	color: var(--red) !important;
+	text-decoration: none !important;
+}
+
+.hover\:text-gray-300:hover, .text-gray-300,
+.dark .link-secondary{
+	color: var(--main-fg) !important;
+}
+
+.bg-red-600 {
+	background: var(--red) !important;
+}
+
+.shaka-scrim-container {
+	background: linear-gradient(to top,#00000077 0,transparent 15%) !important;
+}

@@ -13,6 +13,7 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
+alias yt-dlp='yt-dlp --format "bestvideo[height<=?1440]+bestaudio/best" '
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
@@ -34,7 +35,7 @@ alias s='ls'
 alias lls='ls'
 alias lsl='ls'
 alias cls='ls'
-alias sl='ls'
+# alias sl='ls'
 alias ccd='cd'
 alias d='cd'
 
@@ -50,11 +51,34 @@ complete -d cd
 # Run startx when in tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     startx &
+    sleep 20 && reverse-output
 fi
 
 reverse-output() {
   pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
   pactl set-default-sink reverse-stereo
+}
+
+shred() {
+  for i in "$@"
+  do
+    if [[ -d $i ]];
+    then
+      if fd --base-directory "$i" -aqH0t f;
+      then
+        fd --base-directory "$i" -aH0t f | xargs -0 /bin/shred -zun 1;
+      fi;
+      if ! fd --base-directory "$i" -aqH0t f;
+      then
+        rm -rf "$i"
+      fi;
+    elif [[ -f "$i" ]]; 
+    then
+      /bin/shred "$@" -zun 1
+    else
+      printf "%s: No such file or directory\n" "$i"
+    fi;
+  done;
 }
 
 stream() {
@@ -65,9 +89,9 @@ up() {
     cd $(printf "%.s../" $(seq "$1"));
 }
 
-wget() {
-  curl -L $1 -O
-}
+# wget() {
+#   curl -L $1 -O
+# }
 
 down() {
   curl -L $1 -o $2
@@ -75,10 +99,6 @@ down() {
 
 clear() {
   printf '\E[H\E[J';
-}
-
-shutdown() {
-  doas poweroff -h now
 }
 
 update() {
@@ -91,14 +111,19 @@ rmnvswap() {
   rm -f "$HOME/.local/state/nvim/swap/$file"
 }
 
-open() {
-  cat $1 | less
+paste-file() {
+  n="file=@$1"
+  curl -F $n https://0x0.st
+}
+
+backup() {
+  rsync -av . /mnt/SteamDrive/Backups/26-Apr-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/share/Steam/appcache/"
 }
 
 echo -en "\e]0;haxxor terminal ${1}\a"
-echo -en "\x1b[\x30 q" # Blinking block
+echo -en "\x1b[\x30 q" # Block
 export EDITOR='nvim'
 
 # History
-export HISTIGNORE=' *:q:qq:ls:clear:clea:'
+export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#'
 export HISTSIZE=1000000

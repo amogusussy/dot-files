@@ -14,7 +14,7 @@ local options = {
   },
   view = {
     adaptive_size = false,
-    side = "right",
+    side = "left",
     width = 30,
     hide_root_folder = true,
   },
