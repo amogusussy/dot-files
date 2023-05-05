@@ -4,10 +4,9 @@
 	--post-bg: #1a1b26;
 	--border: #24283b;
 	--second-bg: #161620;
-	--name: #7aa2f7;
 	--grey: #565f89;
 	--placeholder: #c0caf578;
-	
+
 	--purple: #bb9af7;
 	--red: #f7768e;
 	--orange: #ff9e64;
@@ -18,7 +17,7 @@
 	--light-blue: #73daca;
 }
 
-body, #menu, .dialog, .boxbar, .post {
+body, #menu, .dialog, .boxbar {
 	background: var(--main-bg) !important;
 	font-family: JetBrains Mono;
 	color: var(--main-fg);
@@ -36,24 +35,53 @@ body, #menu, .dialog, .boxbar, .post {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 	border: 1px solid var(--border);
-	
 }
 
 .reply {
-	border-radius: 10px !important;
+	border-radius: 3px !important;
 	border: 1px solid var(--border) !important;
 	background: var(--second-bg) !important;
 	padding: 5px;
 }
 
-hr:not(.json-index), #blotter, hr#op,
-.boardBanner, .middlead, .absBotDisclaimer,
-#footer-links, #announce, #ft,
-#postForm,
+hr:not(.json-index), 
+#blotter, 
+hr#op,
+.middlead, 
+.absBotDisclaimer,
+#footer-links,
+#announce, 
+#ft,
 .fa-download,
-#globalMessage
+#globalMessage,
+#bannerCnt,
+.qr-link-container,
+.qr-link-container-bottom,
+.bottomCtrl,
+input[value="delete"],
+.watch-thread-link,
+.postMenuBtn, 
+div.backlink,
+.thread-stats,
+.threadHideButton,
+form[name="post"],
+#mpostform
 {
 	display: none !important;
+}
+
+#postForm * {
+	color: var(--main-fg) !important;
+	background: var(--main-bg) !important;
+	border-color: var(--border) !important;
+}
+
+#postForm a {
+	color: var(--purple) !important;
+}
+
+#togglePostFormLink {
+	margin-top: 5px !important;
 }
 
 .json-index hr {
@@ -80,12 +108,19 @@ input[type="text"], input[type="text"]:focus, input[type="submit"], #t-load, #t-
 }
 
 .catalog-post:hover {
-/* 	background: var(--second-bg) !important; */
 	border: var(--main-bg) 1px solid;
 }
 
+.boardTitle {
+	font-family: monospace;
+	text-align: center !important;
+	font-size: 30px !important;
+	color: var(--blue) !important;
+	padding-top: 20px !important;
+}
+
 #qp {
-	border-radius: 15px;
+	border-radius: 0px;
 	padding: 5px;
 	background: var(--second-bg) !important;
 	border: 1px solid var(--border);
@@ -100,10 +135,17 @@ hr {
 	color: var(--main-fg) !important;
 }
 
-.name, 
-div.post div.postInfo span.postNum > a,
+div.post div.postInfo span.postNum > a {
+	color: var(--main-fg) !important;
+}
+
 .backlink, .quotelink, .subject{
-	color: var(--name) !important;
+	color: var(--blue) !important;
+}
+
+.name {
+	color: var(--blue) !important;
+	padding-left: 8px !important;
 }
 
 .quote {
@@ -116,19 +158,15 @@ input[type="text"], table.postForm > tbody textarea, input[type="password"], #re
 }
 
 :root.tomorrow.highlight-own .yourPost > .reply {
-	border-left: var(--name) solid 3px!important
+	border-left: var(--blue) solid 3px!important
 }
 
 :root.tomorrow.catalog-hover-expand .catalog-container:hover > .post {
 	background-color: var(--post-bg) !important;
 }
 
-a, a:visited, a.replylink:not(:hover), div#absbot a:not(:hover) {
+a, a:not(.quotelink):visited, a.replylink:not(:hover), div#absbot a:not(:hover) {
 	color: var(--purple) !important;	
-}
-
-a:hover {
-	color: var(--green) !important;
 }
 
 .reply:target, .reply.highlight {
@@ -141,7 +179,7 @@ a:hover {
 }
 
 .catalog-hover-expand .catalog-container:hover > .post {
-	background: var(--main-bg)
+	background: var(--main-bg) !important;
 }
 
 #header-bar {
@@ -150,7 +188,7 @@ a:hover {
 }
 
 a:hover, .watcher-link {
-	color: var(--name) !important;
+	color: var(--blue) !important;
 }
 
 #fourchanx-settings, div[data-checked] {
@@ -242,10 +280,6 @@ textarea::placeholder, input::placeholder, #qr-no-file, #t-resp::placeholder {
 	height: 100% !important;
 }
 
-.navLinks .navLinksBot .desktop {
-	position: absolute !important;
-	bottom: 0;
-}
 .threadContainer {border-color: var(--red);}
 .threadContainer .threadContainer {border-color: var(--orange);}
 .threadContainer .threadContainer .threadContainer {border-color: var(--yellow);}
@@ -279,11 +313,6 @@ textarea::placeholder, input::placeholder, #qr-no-file, #t-resp::placeholder {
 	color: var(--main-fg);
 }
 
-.hide-thread-button, .hide-reply-button {
-	margin-right: 0px;
-	margin-left: 5px;
-}
-
 :root:not(.werkTyme) .catalog-thread.watched .catalog-thumb, :root:root.werkTyme .catalog-thread.watched:not(:hover), :root:root.werkTyme:not(.catalog-hover-expand) .catalog-thread.watched, :root.werkTyme.catalog-hover-expand .catalog-thread.watched > .catalog-container:hover > .catalog-post {
 	border: 2px solid var(--red);
 }
@@ -299,9 +328,55 @@ textarea::placeholder, input::placeholder, #qr-no-file, #t-resp::placeholder {
 }
 
 div.post div.postInfo {
-	margin-right: 5px !important;
+	margin-right: 3px !important;
 }
 
 .boxcontent {
 	color: var(--fg)
+}
+
+.catalog-hover-expand .catalog-container:hover > .post {
+	background: var(--post-bg) !important;
+}
+
+.backlink:visited {
+	color: var(--blue) !important;
+}
+
+.postNum + .container::before {
+	visibility: hidden !important;
+}
+
+div.post div.postInfo span.postNum a:hover, .posteruid .hand:hover {
+	color: var(--blue) !important;
+	opacity: 0.8 !important;
+}
+
+.closed {
+	padding: 0px !important;
+}
+
+.boardTitle {
+	text-shadow: none !important;
+}
+
+.preview {
+	background: var(--main-bg) !important;
+	border: 1px solid var(--border) !important;
+	border-radius: 0px !important;
+}
+
+#watched-threads div a {
+	color: var(--blue) !important;
+}
+
+.full-image {
+	--n: 800px;
+	max-width: var(--n) !important;
+	max-height: var(--n) !important;
+}
+
+.message {
+	background: var(--second-bg);
+	color: var(--main-fg);
 }

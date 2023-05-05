@@ -117,7 +117,7 @@ paste-file() {
 }
 
 backup() {
-  rsync -av . /mnt/SteamDrive/Backups/26-Apr-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/share/Steam/appcache/"
+  rsync -av . /mnt/SteamDrive/Backups/2-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
 }
 
 echo -en "\e]0;haxxor terminal ${1}\a"
@@ -125,5 +125,5 @@ echo -en "\x1b[\x30 q" # Block
 export EDITOR='nvim'
 
 # History
-export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#'
+export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq'
 export HISTSIZE=1000000

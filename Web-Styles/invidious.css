@@ -1,42 +1,42 @@
 :root {
-    --bg: #1a1b26;
-    --fg: #c0caf5;
-    --hover: #7aa2f7;
-    --subscribe: #f7768e;
-    --link: #9ece6a;
+    --bg: #1a1b26 !important;
+    --fg: #c0caf5 !important;
+    --hover: #7aa2f7 !important;
+    --subscribe: #f7768e !important;
+    --link: #9ece6a !important;
 
-	--blue: #7aa2f7;
-	--gray: #414868;
+  --blue: #7aa2f7 !important;
+  --gray: #414868 !important;
 }
 
 .pure-u-1 {
-    float: right;
-    height: fit-content;
+    float: right !important;
+    height: fit-content !important;
 }
 
-div.pure-u-lg-1-5:nth-child(1) {
-	margin-right: 100%
+.pure-u-lg-1-5:nth-child(1) {
+  margin-right: 100%
 }
 
-div.pure-u-lg-1-5:nth-child(1) p, 
-div.pure-u-lg-1-5:nth-child(1) i 
+.pure-u-lg-1-5:nth-child(1) p, 
+.pure-u-lg-1-5:nth-child(1) i 
 {
-	display: inline-block;
+  display: inline-block !important;
 }
 
 #views p, #likes p {
-	margin: 0px !important;
+  margin: 0px !important;
 }
 
-div.pure-u-lg-1-5:nth-child(1) .h-box {
-	width: 500% !important;
+.pure-u-lg-1-5:nth-child(1) .h-box {
+  width: 500% !important;
 }
-div.pure-u-lg-1-5:nth-child(1) *:not(a){
-	padding-right: 10px;
+.pure-u-lg-1-5:nth-child(1) *:not(a){
+  padding-right: 10px !important;
 }
 
-div.pure-u-lg-1-5:nth-child(2) {
-    max-width: 100%;
+.pure-u-lg-1-5:nth-child(2) {
+    max-width: 100% !important;
 }
 
 
@@ -52,7 +52,7 @@ body a.pure-button-primary,
 }
 
 
-html body.no-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g div.pure-u-1.pure-u-lg-3-5 div.h-box div#comments div div.pure-g div.pure-u-20-24.pure-u-md-22-24 div#replies.pure-g div.pure-u-23-24 p{
+html body.no-theme .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g .pure-u-1.pure-u-lg-3-5 .h-box #comments div .pure-g .pure-u-20-24.pure-u-md-22-24 #replies.pure-g .pure-u-23-24 p{
     margin: 0px !important;
     margin-bottom: 15px !important;
 }
@@ -61,29 +61,29 @@ html body.no-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g d
 .pure-u-1-24, #family_friendly, 
 #license, #genre, a[data-comments="reddit"], 
 #download,
-div.pure-u-md-2-24:nth-child(1):not(.channel-profile), 
-div.pure-u-md-2-24:nth-child(3),
-#annotations{
+.pure-u-md-2-24:nth-child(1):not(.channel-profile), 
+.pure-u-md-2-24:nth-child(3),
+#annotations,
+#contents .h-box:nth-child(2) > h3:nth-child(1),
+form[action="/download"],
+#allowed_regions{
     display: none !important;
 }
 
 .channel-profile {
-	width: 60px !important;
+  width: 60px !important;
 }
 
-html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g.h-box div.pure-u-2-3 div.channel-profile {
-	width: 100% !important;
+html body.dark-theme .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g.h-box .pure-u-2-3 .channel-profile {
+  width: 100% !important;
 }
 
-#contents .h-box:nth-child(2) > h3:nth-child(1){
-	display: none !important;
-}
 .pure-u-lg-3-5 > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) {
-	width: fit-content !important;
+  width: fit-content !important;
 }
 
-html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g div.pure-u-1.pure-u-lg-3-5 div.h-box div#comments div div.pure-g div.channel-profile.pure-u-4-24.pure-u-md-2-24 {
-	margin-right: 15px;
+.pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g .pure-u-1.pure-u-lg-3-5 .h-box #comments div .pure-g .channel-profile.pure-u-4-24.pure-u-md-2-24 {
+  margin-right: 5px !important;
 }
 
 #likes, #views {
@@ -92,7 +92,7 @@ html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g
 }
 
 .channel-profile * {
-/*     border-radius: 90% !important; */
+    border-radius: 90% !important;
 }
 
 h5.pure-g {
@@ -116,17 +116,17 @@ a:hover, .dark-theme a:hover, .dark-theme a:active, .dark-theme summary:hover {
 }
 
 .pure-u-1 .pure-u-lg-1-5 .h-box a p:not(.length){
-    margin: 10px 0px;
+    margin: 10px 0px !important;
 }
 
 .thumbnail img {
-    border-radius: 7px;
+    border-radius: 7px !important;
 }
 
 button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widget {
-	border: 0px;
-	-webkit-box-shadow: inset 0 0px 0px #dddddd00 !important;
-	background-color: var(--subscribe) !important;
+  border: 0px !important;
+  -webkit-box-shadow: inset 0 0px 0px #dddddd00 !important;
+  background-color: var(--subscribe) !important;
 }
 
 .vjs-playback-rate {
@@ -143,82 +143,71 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 }
 
 #player-container {
-	width: 100%;
+  width: 100% !important;
 }
-
-/* #player_html5_api {
-	max-height: 800px !important;
-} */
 
 .pure-u-md-20-24, .pure-u-md-5-6 {
-	width:  calc(100% - 2em);
+  width:  calc(100% - 2em) !important;
 }
 
-div.pure-u-lg-1-5:nth-child(3){
-	margin-left: auto !important;
-	margin-top: -100px !important;
+.pure-u-lg-1-5:nth-child(3){
+  margin-left: auto !important;
+  margin-top: -100px !important;
 }
 
 .pure-u-lg-3-5 {
-	width: 80%;
+  width: 80% !important;
 }
 
-div.pure-u-md-1-4{
-	width: calc(100%/5) !important;
+.pure-u-md-1-4{
+  width: calc(100%/5) !important;
 }
 
 #download_widget {
-	width: 33% !important;
+  width: 33% !important;
 }
 
 .vjs-control-bar {
-	background: var(--bg) !important;
-	color: var(--fg) !important;
+  background: var(--bg) !important;
+  color: var(--fg) !important;
 }
 
 #searchbox {
-	border-color: rgba(0,0,0,0);
-  	border-bottom-color: var(--fg);
+  border-color: rgba(0,0,0,0) !important;
+    border-bottom-color: var(--fg) !important;
 }
 
 .video-js.player-style-invidious .vjs-play-progress {
-	background-color: var(--blue);
+  background-color: var(--blue) !important;
 }
 
 .video-js .vjs-load-progress,
 .video-js .vjs-load-progress div {
-	background-color: var(--gray);
-}
-
-form[action="/download"] {
-	display: none !important;
+  background-color: var(--gray) !important;
 }
 
 a[title="Audio mode"] {
-	margin-left: 15px !important;
+  margin-left: 10px !important;
 }
 
-div.h-box:nth-child(5) > h1:nth-child(1) {
-	max-width: 55ch !important;
+.h-box:nth-child(5) > h1:nth-child(1) {
+  max-width: 55ch !important;
 }
 
 #player {
-	max-height: 800px !important;
+  max-height: 800px !important;
 }
 
 @media all and (display-mode: fullscreen) {
- 	#player {
-		width: 100% !important;
-	}
+   #player {
+    width: 100% !important;
+  }
 }
 
-/* @media only screen and (max-aspect-ratio: 16 / 9) {
-	#player-container {
-		padding-bottom: auto !important;
-	}
-} */
+.h-box:nth-child(4) > h1:nth-child(1) {
+  margin-bottom: 0px !important;
+}
 
-
-div.h-box:nth-child(4) > h1:nth-child(1) {
-	margin-bottom: 0px !important;
+.h-box:nth-child(4) > h1:nth-child(1) {
+	max-width: 70ch !important;
 }

@@ -17,13 +17,13 @@
 	--light-blue: #73daca;
 }
 
-.dark {
+.dark, .modal-container{
 	background: var(--main-bg) !important;
 	color: var(--main-fg) !important;
 }
 
 .dark .input, .dark .select, .dark .btn, .dark .pref:nth-child(2n+1), .dark footer,
-.dark .suggestions-container{
+.dark .suggestions-container, .bg-gray-500\/50, .bg-red-500\/50 {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 }
@@ -83,4 +83,37 @@ a:hover, a *:hover, a:active, a *:active {
 
 .shaka-scrim-container {
 	background: linear-gradient(to top,#00000077 0,transparent 15%) !important;
+}
+
+.text-blue-500 {
+	color: var(--blue) !important;
+}
+
+h2.mb-2 {
+	margin-bottom: 0px !important;
+	border-bottom: 2px solid var(--placeholder) !important;
+}
+
+.overflow-y-scroll {
+	scrollbar-width: none;
+	margin-left: 5px;
+}
+
+.chapter-vertical:hover {
+	background: var(--main-bg) !important;
+}
+
+.suggestions-container {
+	padding: 7px !important;
+	border-radius: 5px !important;
+	
+}
+
+.player-container {
+	max-height: 80vh !important;
+}
+
+div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
+	margin-left: -19px !important;
+	margin-right: -19px !important;
 }

@@ -143,12 +143,13 @@ static const Key keys[] = {
     { MODKEY,                           XK_F11,                   spawn,  {.v = downvol } },
 	  { MODKEY,                           XK_F9,                    spawn,  {.v = mutevol } },
 	  { MODKEY,                           XK_F12,                   spawn,  {.v = upvol   } },
+    { 0,                           XF86XK_AudioPlay,         spawn,  SHCMD("playerctl play-pause")},
 
     // screenshot fullscreen and cropped
     { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},
     { MODKEY,                           XK_u,       spawn,            SHCMD("maim --select | xclip -selection clipboard -t image/png")},
     { MODKEY,                           XK_space,   spawn,            SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
+    { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
     { Mod1Mask,				                  XK_Delete,  spawn,		        SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
     { MODKEY,                           XK_a,  	    spawn,            SHCMD("pavucontrol")},
 
