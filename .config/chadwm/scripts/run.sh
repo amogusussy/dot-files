@@ -9,7 +9,8 @@ xrandr --output DP-5 --same-as HDMI-0 &
 #picom &
 
 
-~/.config/chadwm/scripts/bar.sh &
+# ~/.config/chadwm/scripts/bar.sh &
 # while type dwm >/dev/null; do dwm && continue || break; done
+slstatus &
 
 exec dbus-launch --sh-syntax --exit-with-session dwm

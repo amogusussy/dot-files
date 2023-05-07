@@ -15,24 +15,22 @@ cpu() {
   printf "^c$white^ ^b$grey^ $cpu_val"
 }
 
-pkg_updates() {
-  updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
-
-  if [ -z "$updates" ]; then
-    printf "  ^c$green^     Fully Updated"
-  else
-    printf "  ^c$green^     $updates"" updates"
-  fi
-}
+# pkg_updates() {
+#   updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
+#
+#   if [ -z "$updates" ]; then
+#     printf "  ^c$green^     Fully Updated"
+#   else
+#     printf "  ^c$green^     $updates"" updates"
+#   fi
+# }
 
 mem() {
-  printf "^c$blue^^b$black^  "
-  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c#7aa2f7^^b#1a1b26^  ^c#7aa2f7^ %s" $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
 }
 
 clock() {
-	printf "^c$black^ ^b$darkblue^ 󱑆 "
-	printf "^c$black^^b$blue^ $(date '+%H:%M')  "
+  printf "^c#1a1b26^ ^b#7aa2f7^ 󱑆 ^c#1a1b26^^b#7aa2f7^ $(date '+%H:%M') "
 }
 
 while true; do
