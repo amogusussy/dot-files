@@ -7,13 +7,12 @@ fi
 
 # General aliases
 PS1="$(date +%I:%M) \W $ "
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --file-type'
 alias q='exit'
 alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
-alias yt-dlp='yt-dlp --format "bestvideo[height<=?1440]+bestaudio/best" '
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
@@ -27,6 +26,7 @@ alias kq='pkill qbittorrent'
 alias ke='pkill electron'
 alias kf='pkill firefox'
 alias kl='pkill librewolf'
+alias kx='pkill Xorg'
 
 # Other
 alias record='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -preset veryfast file.mkv' 

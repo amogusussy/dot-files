@@ -1,0 +1,9 @@
+#!/bin/sh
+cp $HOME/.config/mpv/mpv.conf ./.config/mpv/mpv.conf
+cp $HOME/.bashrc .
+
+cp -r $HOME/.config/chadwm/ ./.config/
+cp -r $HOME/.config/zathura/ ./.config/
+cp -r $HOME/.config/rofi/ ./.config/
+cp -r $HOME/.config/nvim/ ./.config/
+cp -r $HOME/.config/alacritty/ ./.config/

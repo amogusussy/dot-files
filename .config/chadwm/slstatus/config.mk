@@ -12,11 +12,11 @@ X11LIB = /usr/X11R6/lib
 
 # flags
 CPPFLAGS = -I$(X11INC) -D_DEFAULT_SOURCE
-CFLAGS   = -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter -O3
+CFLAGS   = -std=c99 -pedantic -Wall -Wextra -O3 -Wunused-parameter
 LDFLAGS  = -L$(X11LIB) -s
 # OpenBSD: add -lsndio
 # FreeBSD: add -lkvm -lsndio
 LDLIBS   = -lX11
 
 # compiler and linker
-CC = cc
+CC = gcc

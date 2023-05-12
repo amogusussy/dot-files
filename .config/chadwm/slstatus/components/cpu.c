@@ -6,8 +6,9 @@
 #include "../slstatus.h"
 #include "../util.h"
 
-#define CPU_FREQ "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"
+// #define CPU_FREQ "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"
 
+#if 0
 const char *
 cpu_freq(const char *unused)
 {
@@ -19,6 +20,7 @@ cpu_freq(const char *unused)
 
   return fmt_human(freq * 1000, 1000);
 }
+#endif
 
 const char *
 cpu_perc(const char *unused)
@@ -33,15 +35,15 @@ cpu_perc(const char *unused)
       != 7)
     return NULL;
 
-  if (b[0] == 0)
+  if (!(b[0]))
     return NULL;
 
   sum = (b[0] + b[1] + b[2] + b[3] + b[4] + b[5] + b[6]) -
         (a[0] + a[1] + a[2] + a[3] + a[4] + a[5] + a[6]);
 
-  if (sum == 0)
+  if (!(sum))
     return NULL;
 
-  return bprintf("%1.1f", (float)( 10 * ((b[0] + b[1] + b[2] + b[5] + b[6]) -
-                  (a[0] + a[1] + a[2] + a[5] + a[6])) / sum));
+  return bprintf("%.1f", (float)(10 * (1 - ((((b[3] + b[4]) - (a[3] + a[4]))) / sum))));
 }
+

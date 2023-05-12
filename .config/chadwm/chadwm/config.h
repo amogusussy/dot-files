@@ -145,7 +145,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_F11,                   spawn,  {.v = downvol } },
 	  { MODKEY,                           XK_F9,                    spawn,  {.v = mutevol } },
 	  { MODKEY,                           XK_F12,                   spawn,  {.v = upvol   } },
-    { 0,                           XF86XK_AudioPlay,         spawn,  SHCMD("playerctl play-pause")},
+    { 0,                               XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio")},
 
     // screenshot fullscreen and cropped
     { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},

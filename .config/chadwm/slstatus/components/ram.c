@@ -6,6 +6,7 @@
 
 #include <stdint.h>
 
+#if 0
 const char *
 ram_free(const char *unused)
 {
@@ -54,21 +55,22 @@ ram_total(const char *unused)
 
   return fmt_human(total * 1024, 1024);
 }
+#endif
 
-	const char *
-	ram_used(const char *unused)
-	{
-		uintmax_t total, free, buffers, cached, used;
+const char *
+ram_used(const char *unused)
+{
+  uintmax_t total, free, buffers, cached, used;
 
-		if (pscanf("/proc/meminfo",
-		           "MemTotal: %ju kB\n"
-		           "MemFree: %ju kB\n"
-		           "MemAvailable: %ju kB\n"
-		           "Buffers: %ju kB\n"
-		           "Cached: %ju kB\n",
-		           &total, &free, &buffers, &buffers, &cached) != 5)
-			return NULL;
+  if (pscanf("/proc/meminfo",
+             "MemTotal: %ju kB\n"
+             "MemFree: %ju kB\n"
+             "MemAvailable: %ju kB\n"
+             "Buffers: %ju kB\n"
+             "Cached: %ju kB\n",
+             &total, &free, &buffers, &buffers, &cached) != 5)
+    return NULL;
 
-		used = (total - free - buffers - cached);
-		return fmt_human(used * 1000, 1000);
-	}
+  used = (total - free - buffers - cached);
+  return fmt_human(used * BASE);
+}

@@ -23,16 +23,16 @@ verr(const char *fmt, va_list ap)
 	}
 }
 
-void
-warn(const char *fmt, ...)
-{
-	va_list ap;
-
-	va_start(ap, fmt);
-	verr(fmt, ap);
-	va_end(ap);
-}
-
+// void
+// warn(const char *fmt, ...)
+// {
+// 	va_list ap;
+//
+// 	va_start(ap, fmt);
+// 	verr(fmt, ap);
+// 	va_end(ap);
+// }
+//
 void
 die(const char *fmt, ...)
 {
@@ -89,34 +89,31 @@ bprintf(const char *fmt, ...)
 	return (ret < 0) ? NULL : buf;
 }
 
+// #define BASE 1024
+
 const char *
-fmt_human(uintmax_t num, int base)
+fmt_human(uintmax_t num) // int base
 {
 	double scaled;
 	size_t i, prefixlen;
 	const char **prefix;
-	const char *prefix_1000[] = { "", "k", "M", "G", "T", "P", "E", "Z",
-	                              "Y" };
-	const char *prefix_1024[] = { "", "Ki", "Mi", "G", "Ti", "Pi", "Ei",
-	                              "Zi", "Yi" };
 
-	switch (base) {
-	case 1000:
-		prefix = prefix_1000;
-		prefixlen = LEN(prefix_1000);
-		break;
-	case 1024:
-		prefix = prefix_1024;
-		prefixlen = LEN(prefix_1024);
-		break;
-	default:
-		warn("fmt_human: Invalid base");
-		return NULL;
-	}
+  #if BASE == 1000
+    const char *prefix_1000[] = { "", "k", "M", "G", "T", "P", "E", "Z",
+	                                "Y" };
+    prefix = prefix_1000;
+  #endif
+
+  #if BASE == 1024
+	  const char *prefix_1024[] = { "", "Ki", "Mi", "G", "Ti", "Pi", "Ei",
+	                                "Zi", "Yi" };
+    prefix = prefix_1024;
+  #endif
+  prefixlen = 9;
 
 	scaled = num;
-	for (i = 0; i < prefixlen && scaled >= base; i++)
-		scaled /= base;
+	for (i = 0; i < prefixlen && scaled >= BASE; i++)
+		scaled /= BASE;
 
 	return bprintf("%.1f%s", scaled, prefix[i]);
 }
