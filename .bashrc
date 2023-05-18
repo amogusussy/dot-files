@@ -47,6 +47,8 @@ complete -cf which
 complete -cf xbps-remove
 complete -cf man
 complete -cf time
+complete -cf xargs
+complete -cf cpulimit
 complete -d cd
 
 # Run startx when in tty
