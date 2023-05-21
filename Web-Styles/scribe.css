@@ -1,0 +1,50 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+body {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+	font-family: monospace !important;
+	margin: auto;
+	width: 1200px;
+	padding-left: 0px !important;
+}
+
+a:link::selection, a:link::selection, .hover-tufte-underline:hover, .tufte-underline, a:link {
+	text-shadow: none !important;
+	text-decoration: underline;
+}
+
+pre {
+	background: var(--second-bg) !important;
+}
+
+section > footer, section > p, section > table {
+	width: 100% !important;
+}
+
+img {
+	display: block;
+	margin: auto;
+	width: 500px;
+}
+
+figure {
+	max-width: 100%;
+}
