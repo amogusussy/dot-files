@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if playerctl -l | grep -q -i "elisa" >> /dev/null; then
+  printf "^c#9ece6a^$(playerctl metadata artist --player elisa) - $(playerctl metadata title --player elisa) "
+else
+  printf " "
+fi;

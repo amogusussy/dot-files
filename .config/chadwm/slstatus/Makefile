@@ -9,6 +9,7 @@ COM =\
 	components/cpu\
 	components/datetime\
 	components/ram\
+	components/run_command\
 	# components/battery\
 	# components/cat\
 	# components/cpu\

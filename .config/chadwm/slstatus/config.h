@@ -65,8 +65,9 @@ static const char unknown_str[] = "0.0";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-  // { cat,      "%s",                                                         "/proc/loadavg"},
-  { cpu_perc, "^c#1a1b26^ ^b#9ece6a^ CPU^c#a9b1d6^ ^b#24283b^ %s ",        NULL },
-	{ ram_used, "^c#7aa2f7^^b#1a1b26^   ^c#7aa2f7^%s",	                      NULL },
-	{ datetime, "^c#1a1b26^ ^b#7aa2f7^ 󱑆 ^c#1a1b26^^b#7aa2f7^ %s ",          "%H:%M" },
+  // { cat,      "%s",                                                    "/proc/loadavg"},
+  { run_command, "%s",        "/home/matthew/.config/chadwm/scripts/show_song"},
+  { cpu_perc,    "^c#1a1b26^ ^b#9ece6a^ CPU^c#a9b1d6^ ^b#24283b^ %s ",    NULL },
+	{ ram_used,    "^c#7aa2f7^^b#1a1b26^   ^c#7aa2f7^%s",	                NULL },
+	{ datetime,    "^c#1a1b26^ ^b#7aa2f7^ 󱑆 ^c#1a1b26^^b#7aa2f7^ %s ",      "%H:%M" },
 };

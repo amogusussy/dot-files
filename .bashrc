@@ -14,7 +14,6 @@ alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
 alias grep="grep --color=auto "
-alias startxfce4="exec dbus-launch --sh-syntax --exit-with-session startxfce4"
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
