@@ -2,7 +2,7 @@
 
 #include <X11/XF86keysym.h>
 
-#define GAP 0
+#define GAP 1
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int default_border = 1;   /* to switch back to default border after dynamic border resizing via keybinds */

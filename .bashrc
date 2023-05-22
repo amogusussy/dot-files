@@ -129,5 +129,5 @@ echo -en "\x1b[\x30 q" # Block
 export EDITOR='nvim'
 
 # History
-export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq'
+export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq:m'
 export HISTSIZE=1000000

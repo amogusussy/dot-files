@@ -3531,12 +3531,12 @@ void updatesizehints(Client *c) {
   c->hintsvalid = 1;
 }
 
-void updatestatus(void) {
-  if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-    strcpy(stext, "dwm-" VERSION);
-  drawbar(selmon);
-  updatesystray();
-}
+// void updatestatus(void) {
+//   if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
+//     strcpy(stext, "dwm-" VERSION);
+//   drawbar(selmon);
+//   updatesystray();
+// }
 
 void updatesystrayicongeom(Client *i, int w, int h) {
   int rh = bh - vertpadbar;
