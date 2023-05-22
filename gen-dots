@@ -10,12 +10,6 @@ do
   cp -r ~/.config/$directory ./.config/
 done;
 
-# cp -r ~/.config/chadwm/ ./.config/
-# cp -r ~/.config/zathura/ ./.config/
-# cp -r ~/.config/rofi/ ./.config/
-# cp -r ~/.config/nvim/ ./.config/
-# cp -r ~/.config/alacritty/ ./.config/
-
 git add .
 git commit -m "update dots"
 git push origin main
