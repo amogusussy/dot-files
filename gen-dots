@@ -1,12 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 cp ~/.config/mpv/mpv.conf ./.config/mpv/mpv.conf
 cp ~/.bashrc .
 
-cp -r ~/.config/chadwm/ ./.config/
-cp -r ~/.config/zathura/ ./.config/
-cp -r ~/.config/rofi/ ./.config/
-cp -r ~/.config/nvim/ ./.config/
-cp -r ~/.config/alacritty/ ./.config/
+directories=("chadwm" "zathura" "rofi" "nvim" "alacritty")
+
+for $directory in ${directories}
+do
+  rm ./.config/$directory
+  cp -r ~/.config/$directory ./.config/
+done;
+
+# cp -r ~/.config/chadwm/ ./.config/
+# cp -r ~/.config/zathura/ ./.config/
+# cp -r ~/.config/rofi/ ./.config/
+# cp -r ~/.config/nvim/ ./.config/
+# cp -r ~/.config/alacritty/ ./.config/
 
 git add .
 git commit -m "update dots"
