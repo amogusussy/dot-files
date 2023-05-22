@@ -6,7 +6,7 @@ directories=("chadwm" "zathura" "rofi" "nvim" "alacritty")
 
 for directory in ${directories}
 do
-  rm ./.config/$directory
+  rm -rf ./.config/$directory
   cp -r ~/.config/$directory ./.config/
 done;
 
