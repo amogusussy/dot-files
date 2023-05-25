@@ -12,6 +12,6 @@ xrandr --output DP-5 --same-as HDMI-0 &
 # ~/.config/chadwm/scripts/bar.sh &
 # while type dwm >/dev/null; do dwm && continue || break; done
 slstatus &
-alacritty -e nvim /home/matthew/todo.md &
+# alacritty -e nvim /home/matthew/todo.md &
 
 exec dbus-launch --sh-syntax --exit-with-session dwm

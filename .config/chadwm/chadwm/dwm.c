@@ -771,8 +771,8 @@ void clientmessage(XEvent *e) {
 
   if (showsystray && cme->window == systray->win &&
       cme->message_type == netatom[NetSystemTrayOP]) {
+    // /* add systray icons */
 #if 0
-    /* add systray icons */
     if (cme->data.l[1] == SYSTEM_TRAY_REQUEST_DOCK) {
       if (!(c = (Client *)calloc(1, sizeof(Client))))
         die("fatal: could not malloc() %u bytes\n", sizeof(Client));
@@ -3531,12 +3531,12 @@ void updatesizehints(Client *c) {
   c->hintsvalid = 1;
 }
 
-// void updatestatus(void) {
-//   if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-//     strcpy(stext, "dwm-" VERSION);
-//   drawbar(selmon);
-//   updatesystray();
-// }
+void updatestatus(void) {
+  if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
+    strcpy(stext, "dwm-" VERSION);
+  drawbar(selmon);
+  updatesystray();
+}
 
 void updatesystrayicongeom(Client *i, int w, int h) {
   int rh = bh - vertpadbar;

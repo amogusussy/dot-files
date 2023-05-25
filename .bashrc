@@ -13,7 +13,7 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
-alias grep="grep --color=auto "
+alias grep="grep --color=auto -Rn"
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
@@ -52,15 +52,23 @@ complete -cf xargs
 complete -cf cpulimit
 complete -d cd
 
+reverse-output() {
+  if [[ "$(pactl get-default-sink)" = "reverse-stereo" ]]; then
+    printf "Audio already reversed\n"
+  else
+    pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
+    pactl set-default-sink reverse-stereo
+  fi;
+}
+
 # Run startx when in tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     startx &
     sleep 20 && reverse-output
 fi
 
-reverse-output() {
-  pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
-  pactl set-default-sink reverse-stereo
+mpv() {
+  /bin/mpv --volume=$(printf "$(playerctl volume) * 100 / 1\n"| bc) $@
 }
 
 shred() {
@@ -111,7 +119,7 @@ update() {
 }
 
 rmnvswap() {
-  file="$(echo "$(pwd)/$1" | sed -e "s/\//%/g").swap"
+  file="$(printf "$(pwd)/$1\n" | sed -e "s/\//%/g").swap"
   rm -f "$HOME/.local/state/nvim/swap/$file"
 }
 
@@ -124,8 +132,8 @@ backup() {
   rsync -av . /mnt/SteamDrive/Backups/2-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
 }
 
-echo -en "\e]0;haxxor terminal ${1}\a"
-echo -en "\x1b[\x30 q" # Block
+printf "\e]0;haxxor terminal"
+printf "\x1b[\x30 q"
 export EDITOR='nvim'
 
 # History

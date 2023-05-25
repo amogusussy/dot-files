@@ -15,7 +15,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails,display systray on the 1st monitor,False: display systray on last monitor*/
-static const int showsystray        = 1;        /* 0 means no systray */
+static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int showtab            = showtab_auto;
 static const int toptab             = 1;        /* 0 means bottom tab */
@@ -32,12 +32,11 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-// static const char *mpv[] = {"/bin/mpv $(zenity --entry)"};
 static const int new_window_attach_on_end = 0; /*  1 means the new window will attach on the end; 0 means the new window will attach on the front,default is front */
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
-static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font Mono:style:medium:size=19" };
+static const char *fonts[]          = {"Iosevka:style:medium:size=12","JetBrainsMono Nerd Font Mono:style:medium:size=19" };
 
 // theme
 #include "themes/tokyonight.h"
@@ -140,16 +139,18 @@ static const Layout layouts[] = {
 
 static const Key keys[] = {
     /* modifier                         key         function        argument */
+    // Browser
+    { MODKEY,                           XK_w,                     spawn, SHCMD("flatpak run io.gitlab.librewolf-community") },
 
     // brightness and audio 
-    { MODKEY,                           XK_F11,                   spawn,  {.v = downvol } },
-	  { MODKEY,                           XK_F9,                    spawn,  {.v = mutevol } },
-	  { MODKEY,                           XK_F12,                   spawn,  {.v = upvol   } },
+    { 0,                                XF86XK_AudioLowerVolume,  spawn,  {.v = downvol } },
+	  { 0,                                XF86XK_AudioMute,         spawn,  {.v = mutevol } },
+	  { 0,                                XF86XK_AudioRaiseVolume,  spawn,  {.v = upvol } },
     
     // Media keys
-    { 0,                               XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio play-pause")},
-    { 0,                               XF86XK_AudioPrev,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio prev") },
-    { 0,                               XF86XK_AudioNext,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio next") },
+    { 0,                                XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio play-pause")},
+    { 0,                                XF86XK_AudioPrev,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio prev") },
+    { 0,                                XF86XK_AudioNext,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio next") },
 
     // screenshot fullscreen and cropped
     { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},
@@ -171,9 +172,9 @@ static const Key keys[] = {
     { MODKEY,                           XK_i,       incnmaster,     {.i = +1 }  },
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 }  },
 
-    // shift view
-    { MODKEY,                           XK_Left,    shiftview,      {.i = -1 } },
-    { MODKEY,                           XK_Right,   shiftview,      {.i = +1 } },
+    // // shift view
+    // { MODKEY,                           XK_Left,    shiftview,      {.i = -1 } },
+    // { MODKEY,                           XK_Right,   shiftview,      {.i = +1 } },
 
     // change m,cfact sizes 
     { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
