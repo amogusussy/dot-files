@@ -4,7 +4,7 @@
 vol=$(pactl get-sink-volume "reverse-stereo" | grep '^Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
 num="5"
 
-if [ printf "$vol" | grep -q "[0-9]" ]; then
+if printf "$vol" | grep -qv "[0-9]"; then
   printf " "
   exit
 fi
@@ -13,4 +13,4 @@ mod="$(printf "$vol / $num \n" | bc )"
 active=$(printf "%.s█" $(seq "$mod"))
 non="$(printf "%.s▒" $(seq $(printf "100 / $num - $mod\n" | bc)))"
 
-printf "^c$white^ $vol%% $active$non^b$black^ "
+printf "^c$white^ $vol%% $active$non^b$black^"

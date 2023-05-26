@@ -13,7 +13,7 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
-alias grep="grep --color=auto -Rn"
+alias grep="grep --color=auto -n"
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
@@ -55,10 +55,10 @@ complete -d cd
 reverse-output() {
   if [[ "$(pactl get-default-sink)" = "reverse-stereo" ]]; then
     printf "Audio already reversed\n"
-  else
-    pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
-    pactl set-default-sink reverse-stereo
-  fi;
+    return
+  fi
+  pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
+  pactl set-default-sink reverse-stereo
 }
 
 # Run startx when in tty
