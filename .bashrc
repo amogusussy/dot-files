@@ -1,4 +1,4 @@
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/.nimble/bin
 
 if [[ $- != *i* ]]; then
   return
@@ -61,15 +61,16 @@ reverse-output() {
   pactl set-default-sink reverse-stereo
 }
 
+fixaudio() {
+  pactl set-default-sink alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
+  reverse-output
+}
+
 # Run startx when in tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     startx &
     sleep 20 && reverse-output
 fi
-
-mpv() {
-  /bin/mpv --volume=$(printf "$(playerctl volume) * 100 / 1\n"| bc) $@
-}
 
 shred() {
   for i in "$@"
@@ -129,7 +130,7 @@ paste-file() {
 }
 
 backup() {
-  rsync -av . /mnt/SteamDrive/Backups/2-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
+  rsync -av . /mnt/SteamDrive/Backups/29-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
 }
 
 printf "\e]0;haxxor terminal"

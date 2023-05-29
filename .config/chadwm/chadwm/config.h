@@ -18,7 +18,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails,display s
 static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int showtab            = showtab_auto;
-static const int toptab             = 1;        /* 0 means bottom tab */
+static const int toptab             = 0;        /* 0 means bottom tab */
 static const int floatbar           = 0;        /* 1 means the bar will float (don't have padding), 0 means the bar have padding */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int horizpadbar        = 5; 
@@ -28,7 +28,7 @@ static const int horizpadtabi       = 15;
 static const int horizpadtabo       = 15;
 static const int scalepreview       = 4;
 static const int tag_preview        = 0;        /* 1 means enable, 0 is off */
-static const int colorfultag        = 1;        /* 0 means use SchemeSel for selected non vacant tag */
+static const int colorfultag        = 0;        /* 0 means use SchemeSel for selected non vacant tag */
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
@@ -61,7 +61,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"1", "2", "3", "4", "5"};
+static char *tags[] = {"1", "2", "3", "4", "5", "6", "7"};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
 
@@ -86,7 +86,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-    { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+    { "Firefox",  NULL,       NULL,       256,          0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
 
