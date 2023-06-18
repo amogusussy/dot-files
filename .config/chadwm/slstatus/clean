@@ -1,1 +1,0 @@
-fd -t f | grep "\.o" | xargs rm -f
