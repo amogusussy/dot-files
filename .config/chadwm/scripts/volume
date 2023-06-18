@@ -1,7 +1,7 @@
 #!/bin/bash
 . ~/.config/chadwm/scripts/bar_themes/tokyonight
 
-vol=$(pactl get-sink-volume "reverse-stereo" | grep '^Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+vol=$(pactl get-sink-volume $(pactl get-default-sink) | grep '^Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
 num="5"
 
 if printf "$vol" | grep -qv "[0-9]"; then
@@ -11,6 +11,8 @@ fi
 
 mod="$(printf "$vol / $num \n" | bc )"
 active=$(printf "%.s█" $(seq "$mod"))
-non="$(printf "%.s▒" $(seq $(printf "100 / $num - $mod\n" | bc)))"
-
-printf "^c$white^ $vol%% $active$non^b$black^"
+p=$(printf "100 / $num - $mod\n" | bc)
+if expr $vol "<" 100 >> /dev/null; then 
+  non="$(printf "%.s▒" $(seq "$p"))"
+fi;
+printf "^c$white^ $vol%% $active$non "

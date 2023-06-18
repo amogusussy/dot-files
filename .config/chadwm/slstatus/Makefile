@@ -39,7 +39,7 @@ $(COM:=.o): config.mk $(REQ:=.h) slstatus.h
 slstatus.o: slstatus.c slstatus.h arg.h config.h config.mk $(REQ:=.h)
 
 .c.o:
-	gcc -o $@ -c $(CPPFLAGS) $(CFLAGS) $<
+	gcc -O3 -o $@ -c $(CPPFLAGS) $(CFLAGS) $<
 
 config.h:
 	cp config.def.h $@

@@ -28,15 +28,15 @@ static const int horizpadtabi       = 15;
 static const int horizpadtabo       = 15;
 static const int scalepreview       = 4;
 static const int tag_preview        = 0;        /* 1 means enable, 0 is off */
-static const int colorfultag        = 0;        /* 0 means use SchemeSel for selected non vacant tag */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const int colorfultag        = 1;        /* 0 means use SchemeSel for selected non vacant tag */
+// static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+// static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+// static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const int new_window_attach_on_end = 0; /*  1 means the new window will attach on the end; 0 means the new window will attach on the front,default is front */
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
-static const char *fonts[]          = {"Iosevka:style:medium:size=12","JetBrainsMono Nerd Font Mono:style:medium:size=19" };
+static const char *fonts[]          = { "Iosevka:style:medium:size=12", "JetBrainsMono Nerd Font Mono:style:medium:size=19" };
 
 // theme
 #include "themes/tokyonight.h"
@@ -61,7 +61,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"1", "2", "3", "4", "5", "6", "7"};
+static char *tags[] = {"1", "2", "3", "4", "5"};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
 
@@ -131,6 +131,7 @@ static const Layout layouts[] = {
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
     { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+#define NOMOD 0
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -140,17 +141,17 @@ static const Layout layouts[] = {
 static const Key keys[] = {
     /* modifier                         key         function        argument */
     // Browser
-    { MODKEY,                           XK_w,                     spawn, SHCMD("flatpak run io.gitlab.librewolf-community") },
+    { MODKEY,                           XK_w,       spawn,          SHCMD("flatpak run io.gitlab.librewolf-community") },
 
-    // brightness and audio 
-    { 0,                                XF86XK_AudioLowerVolume,  spawn,  {.v = downvol } },
-	  { 0,                                XF86XK_AudioMute,         spawn,  {.v = mutevol } },
-	  { 0,                                XF86XK_AudioRaiseVolume,  spawn,  {.v = upvol } },
+    // audio 
+    // { NOMOD,                            XF86XK_HomePage,          spawn,  {.v = upvol} },
+	  // { NOMOD,                            XF86XK_Explorer,          spawn,  {.v = mutevol}},
+	  // { NOMOD,                            XF86XK_Calculator,        spawn,  {.v = kj} },
     
     // Media keys
-    { 0,                                XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio play-pause")},
-    { 0,                                XF86XK_AudioPrev,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio prev") },
-    { 0,                                XF86XK_AudioNext,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio next") },
+    { NOMOD,                            XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio play-pause")},
+    { NOMOD,                            XF86XK_AudioPrev,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio prev") },
+    { NOMOD,                            XF86XK_AudioNext,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio next") },
 
     // screenshot fullscreen and cropped
     { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},
@@ -159,6 +160,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
     { Mod1Mask,				                  XK_Delete,  spawn,		        SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
     { MODKEY,                           XK_a,  	    spawn,            SHCMD("pavucontrol")},
+    { MODKEY|ShiftMask,                 XK_a,  	    spawn,            SHCMD("fixaudio")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },

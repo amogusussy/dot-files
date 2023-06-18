@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dbus-run-session pipewire &
+dbus-run-session pipewire-pulse &
+echo

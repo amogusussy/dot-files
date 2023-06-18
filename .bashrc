@@ -13,7 +13,10 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
+alias pyth='python3'
+alias py='python3'
 alias grep="grep --color=auto -n"
+alias fdd=fd
 
 # Vim aliases alias vim='nvim'
 alias vi='nvim'
@@ -29,6 +32,12 @@ alias kf='pkill firefox'
 alias kl='pkill librewolf'
 alias kx='pkill Xorg'
 
+# Doas 
+alias dias='doas'
+alias dooas='doas'
+alias doaas='doas'
+alias doass='doas'
+
 # Other
 alias record='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -preset veryfast file.mkv' 
 alias l='ls'
@@ -41,6 +50,11 @@ alias sls='ls'
 alias ccd='cd'
 alias d='cd'
 
+# Clear
+alias lear="clear"
+alias cclear="clear"
+alias lclear="clear"
+
 # Auto Complete
 complete -cf doas
 complete -cf pkill
@@ -50,6 +64,8 @@ complete -cf man
 complete -cf time
 complete -cf xargs
 complete -cf cpulimit
+complete -cf torsocks
+complete -cf type
 complete -d cd
 
 reverse-output() {
@@ -57,13 +73,14 @@ reverse-output() {
     printf "Audio already reversed\n"
     return
   fi
-  pactl load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
-  pactl set-default-sink reverse-stereo
-}
+  pactl load-module module-remap-sink \
+    sink_name=reverse-stereo \
+    master=0 \
+    channels=2 \
+    master_channel_map=front-right,front-left \
+    channel_map=front-left,front-right
 
-fixaudio() {
-  pactl set-default-sink alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
-  reverse-output
+  pactl set-default-sink reverse-stereo
 }
 
 # Run startx when in tty
@@ -102,14 +119,6 @@ up() {
     cd $(printf "%.s../" $(seq "$1"));
 }
 
-# wget() {
-#   curl -L $1 -O
-# }
-
-down() {
-  curl -L $1 -o $2
-}
-
 clear() {
   printf '\E[H\E[J';
 }
@@ -133,8 +142,33 @@ backup() {
   rsync -av . /mnt/SteamDrive/Backups/29-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
 }
 
+chadwm() {
+  cd ~/.config/chadwm/chadwm/
+  nvim ./config.h +NvimTreeToggle
+}
+
+function rm () {
+  local args=()
+  for arg in "$@"; do
+    if [[ $arg == -* ]]; then
+      # this argument starts with a dash, so we assume it's an option and skip it
+      continue
+    fi
+    args+=("$arg")
+  done
+
+  if [[ ${#args[@]} -eq 0 ]]; then
+    echo "Error: No files or directories specified"
+    return 1
+  fi
+
+  for arg in "${args[@]}"; do
+    gio trash "$arg"
+  done
+}
+
 printf "\e]0;haxxor terminal"
-printf "\x1b[\x30 q"
+printf "\x1b[\x3"
 export EDITOR='nvim'
 
 # History

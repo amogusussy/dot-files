@@ -63,12 +63,28 @@ static const char unknown_str[] = "";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
+#define COLOR(COL) \
+  "^c" COL "^"
+#define BACKGROUND(COL) \
+  "^b" COL "^"
+
+#define TEMP(BACK, COL) \
+  BACKGROUND(BACK) \
+  COLOR(COL)
+
+#define BLACK "#1a1b26"
+#define GREEN "#9ece6a"
+#define WHITE "#a9b1d6"
+#define GREY "#24283b"
+#define BLUE "#7aa2f7"
+#define RED "#f7768e"
+
 static const struct arg args[] = {
-	/* function format          argument */
-  // { cat,      "%s",                                                    "/proc/loadavg"},
-  { run_command, "%s",        "/home/matthew/.config/chadwm/scripts/volume"},
-  { run_command, "%s",        "/home/matthew/.config/chadwm/scripts/show_song"},
-  { cpu_perc,    "^c#1a1b26^ ^b#9ece6a^ CPU^c#a9b1d6^ ^b#24283b^ %s ",    NULL },
-	{ ram_used,    "^c#7aa2f7^^b#1a1b26^   ^c#7aa2f7^%s",	                NULL },
-	{ datetime,    "^c#1a1b26^ ^b#7aa2f7^ 󱑆 ^c#1a1b26^^b#7aa2f7^ %s ",      "%H:%M" },
+	/* function     colors              format                                      argument */
+  { run_command,  TEMP(BLACK, WHITE)  "%s",                                       "/home/matthew/.config/chadwm/scripts/volume"},
+  { run_command,  TEMP(BLACK, GREEN)  "%s",                                       "/home/matthew/.config/chadwm/scripts/show_song"},
+  { cpu_perc,     TEMP(GREEN, BLACK)  " CPU "   TEMP(GREY, WHITE) " %s ",         NULL },
+	{ ram_used,     TEMP(BLACK, BLUE)   "   %s ",	                                NULL },
+	{ datetime,     TEMP(BLUE, BLACK)   " 󱑆 "     TEMP(BLUE, BLACK) " %s ",         "%H:%M" },
 };
