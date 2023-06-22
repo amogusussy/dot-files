@@ -10,6 +10,7 @@ COM =\
 	components/datetime\
 	components/ram\
 	components/run_command\
+	components/netspeeds\
 	# components/battery\
 	# components/cat\
 	# components/cpu\
@@ -22,7 +23,6 @@ COM =\
 	# components/keyboard_indicators\
 	# components/keymap\
 	# components/load_avg\
-	# components/netspeeds\
 	# components/num_files\
 	# components/ram\
 	# components/run_command\

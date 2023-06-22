@@ -13,8 +13,6 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
-alias pyth='python3'
-alias py='python3'
 alias grep="grep --color=auto -n"
 alias fdd=fd
 
@@ -25,7 +23,15 @@ alias vm='nvim'
 alias vim='nvim'
 
 # Kill Commands
-alias ks='pkill steam'
+# alias ks='pkill steam'
+ks() {
+  printf "Kill Steam? "
+  if [ "$(read)" == "y" ]; then
+    pkill steam
+  else
+    ls
+  fi;
+}
 alias kq='pkill qbittorrent'
 alias ke='pkill electron'
 alias kf='pkill firefox'

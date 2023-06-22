@@ -92,23 +92,21 @@ bprintf(const char *fmt, ...)
 // #define BASE 1024
 
 const char *
-fmt_human(uintmax_t num) // int base
+fmt_human(uintmax_t num, int BASE) // int base
 {
 	double scaled;
 	size_t i, prefixlen;
 	const char **prefix;
 
-  #if BASE == 1000
+  if (BASE == 1000) {
     const char *prefix_1000[] = { "", "k", "M", "G", "T", "P", "E", "Z",
 	                                "Y" };
     prefix = prefix_1000;
-  #endif
-
-  #if BASE == 1024
+  } else if (BASE == 1024) {
 	  const char *prefix_1024[] = { "", "Ki", "Mi", "G", "Ti", "Pi", "Ei",
 	                                "Zi", "Yi" };
     prefix = prefix_1024;
-  #endif
+  }
   prefixlen = 9;
 
 	scaled = num;
