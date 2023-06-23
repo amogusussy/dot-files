@@ -25,8 +25,8 @@ alias vim='nvim'
 # Kill Commands
 # alias ks='pkill steam'
 ks() {
-  printf "Kill Steam? "
-  if [ "$(read)" == "y" ]; then
+  read -p "Kill Steam? " yayornay
+  if [ "$yayornay" == "y" ]; then
     pkill steam
   else
     ls
