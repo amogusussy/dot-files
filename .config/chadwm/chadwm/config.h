@@ -29,9 +29,6 @@ static const int horizpadtabo       = 15;
 static const int scalepreview       = 4;
 static const int tag_preview        = 0;        /* 1 means enable, 0 is off */
 static const int colorfultag        = 1;        /* 0 means use SchemeSel for selected non vacant tag */
-// static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-// static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-// static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const int new_window_attach_on_end = 0; /*  1 means the new window will attach on the end; 0 means the new window will attach on the front,default is front */
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
@@ -106,7 +103,6 @@ static const Layout layouts[] = {
     { "[]=",      tile },    /* first entry is default */
     { "[M]",      monocle },
     { "[\\]",     dwindle },
-    // { "H[]",      deck },
     { " ",        NULL},
     { "TTT",      bstack },
     { "===",      bstackhoriz },
@@ -114,10 +110,6 @@ static const Layout layouts[] = {
     { " ",        NULL},
     { " ",        NULL},
     { " ",        NULL},
-    // { "HHH",      grid },
-    // { "###",      nrowgrid },
-    // { "---",      horizgrid },
-    // { ":::",      gaplessgrid },
     { "|M|",      centeredmaster },
     { ">M>",      centeredfloatingmaster },
     { "><>",      NULL },    /* no layout function means floating behavior */
@@ -143,11 +135,6 @@ static const Key keys[] = {
     // Browser
     { MODKEY,                           XK_w,       spawn,          SHCMD("flatpak run io.gitlab.librewolf-community") },
 
-    // audio 
-    // { NOMOD,                            XF86XK_HomePage,          spawn,  {.v = upvol} },
-	  // { NOMOD,                            XF86XK_Explorer,          spawn,  {.v = mutevol}},
-	  // { NOMOD,                            XF86XK_Calculator,        spawn,  {.v = kj} },
-    
     // Media keys
     { NOMOD,                            XF86XK_AudioPlay,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio play-pause")},
     { NOMOD,                            XF86XK_AudioPrev,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio prev") },
@@ -173,10 +160,6 @@ static const Key keys[] = {
     { MODKEY,                           XK_k,       focusstack,     {.i = -1 }  },
     { MODKEY,                           XK_i,       incnmaster,     {.i = +1 }  },
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 }  },
-
-    // // shift view
-    // { MODKEY,                           XK_Left,    shiftview,      {.i = -1 } },
-    // { MODKEY,                           XK_Right,   shiftview,      {.i = +1 } },
 
     // change m,cfact sizes 
     { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
@@ -285,8 +268,6 @@ static const Button buttons[] = {
     { ClkClientWin,         MODKEY,         Button1,        moveorplace,    {.i = 0} },
     { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
     { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-    //{ ClkClientWin,         ControlMask,    Button1,        dragmfact,      {0} },
-    //{ ClkClientWin,         ControlMask,    Button3,        dragcfact,      {0} },
     { ClkTagBar,            0,              Button1,        view,           {0} },
     { ClkTagBar,            0,              Button3,        toggleview,     {0} },
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
