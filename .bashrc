@@ -178,5 +178,6 @@ printf "\x1b[\x3"
 export EDITOR='nvim'
 
 # History
-export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq:m'
+export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq:m:history'
 export HISTSIZE=1000000
+export HISTTIMEFORMAT='%d/%m/%y %T '
