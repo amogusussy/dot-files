@@ -426,25 +426,8 @@ a.current:nth-child(1):hover, a.current:nth-child(2):hover, a.current:nth-child(
 	right: -11px !important;
 }
 
-.inline {background:var(--main-bg) !important;}
-.inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
-.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline , .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline  {background:var(--second-bg) !important;}
+.inline , .inline .inline .inline , .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline , .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline  {background:var(--main-bg) !important;}
 
 
 .highlight-own .yourPost > .reply {
