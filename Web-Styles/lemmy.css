@@ -1,0 +1,67 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+::placeholder {
+	color: var(--grey) !important;
+}
+
+body {
+	background: var(--main-bg);
+	color: var(--main-fg) !important;
+}
+
+.custom-select, .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show > .btn-outline-secondary.dropdown-toggle, .card, .bg-light, .btn-outline-secondary:hover, .form-control {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border-color: var(--grey) !important;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary, .border-light {
+	border-color: var(--grey) !important;
+}
+
+.btn {
+	border: none;
+}
+
+a, a.text-primary:focus, a.text-primary:hover, a:hover, .text-primary, .btn-danger, .btn-secondary, .text-info, .navbar-light .navbar-nav .nav-link {
+	color: var(--green) !important;
+}
+
+.text-muted, .btn-outline-secondary, .text-body, .post-title a:visited, .card-body, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	color: var(--main-fg) !important;
+}
+
+.btn-secondary, .btn-danger {
+	background: var(--main-bg) !important;
+}
+
+div[style="border-left: 2px solid rgb(172, 83, 83) !important;"] {
+	border-left: 2px solid var(--red) !important;
+}
+
+blockquote {
+	border-color: var(--grey) !important;
+}
+
+.alert-warning {
+	background: var(--grey) !important;
+	color: var(--main-bg) !important;
+	border-color: var(--border) !important;
+}

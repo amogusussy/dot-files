@@ -1,0 +1,346 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+body {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+a {
+	color: var(--blue) !important;
+}
+
+.md, .user, .domain, .titlebox h1 a, .titlebox .bottom, .sidecontentbox .title h1, .link .rank, .link .score, .message.new > .entry .head, .separator, .md blockquote, .md del, .nextprev, .next-suggestions, .media-gallery .gallery-nav-disabled {
+	color: var(--main-fg) !important;
+}
+
+.help-toggle, .reddiquette, .flair, #sr-header-area .redesign-beta-optin, .giftgold, .trophy-area, .grippy, .listing-chooser, div.create > div:nth-child(2), #sr-more-link, .morelink .nub, .report-button, .give-gold-button, .archived-infobar.with-icon::before {
+	display: none !important;
+}
+
+.entry .buttons li a, .tagline, .search-result-meta, .commentarea .menuarea, .dropdown.lightdrop .selected, .preftable .details, label.disabled {
+	color: var(--grey) !important;
+}
+
+.tagline a, .search-result-meta a {
+	color: var(--blue) !important;
+}
+
+.child, .interstitial-subreddit-description, .admin_takedown  {
+	background: var(--second-bg);
+}
+.child .child  {
+	background: var(--main-bg);
+}
+.child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--main-bg);
+}
+.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
+	background: var(--second-bg);
+}
+
+.parent {
+	padding-top: 15px !important;
+}
+
+.comment .child, .comment .showreplies {
+	border-left: 1px solid var(--grey) !important;
+	border-top: 1px solid var(--grey) !important;
+}
+
+.comment.collapsed .tagline, .comment.collapsed .tagline a, .comment.collapsed .search-result-meta, .comment.collapsed .search-result-meta a {
+	color: var(--blue) !important;
+}
+
+textarea, input {
+	color: var(--main-fg);
+	background: var(--second-bg) !important;
+	border: 1px solid var(--grey) !important;
+}
+
+.usertext-edit {
+	margin: 10px;
+	width: 60em !important;
+}
+
+textarea:focus, input:focus {
+	outline: none !important;
+}
+
+.side, .morelink, .morelink a {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+#search input[type="text"] {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border: 1px solid var(--grey);
+}
+
+.linkinfo {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.titlebox form.toggle, .leavemoderator, #sr-header-area, .dropdown.srdrop .selected {
+	background: var(--main-bg);
+	color: var(--main-fg) !important;
+}
+
+.pinnable-content.pinned, .usertext.border .usertext-body {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+#header {
+	background: var(--main-bg) !important;
+	border-color: var(--grey) !important;
+}
+
+#sr-header-area {
+	border-color: #00000000 !important;
+}
+
+.tabmenu li *, .tabmenu li.selected a {
+	background: var(--second-bg) !important;
+	border-bottom: none;
+}
+
+#header-bottom-right {
+	background: #00000000;
+	color: var(--main-fg) !important;
+}
+
+.infobar, .md code, .md pre {
+	background: var(--second-bg) !important;
+	border-color: var(--grey) !important;
+}
+
+.md hr, * hr {
+	border-color: var(--main-bg) !important;
+}
+
+.c-btn-primary {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border: 1px solid var(--main-fg) !important;
+}
+
+.nsfw-stamp, .error {
+	color: var(--red) !important;
+}
+
+.link .usertext-body .md {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border-color: var(--grey) !important;
+}
+
+button[type="submit"], .next-button a, button.cancel {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border: 1px solid var(--grey) !important;
+}
+
+.panestack-title, .side, .morelink, .morelink a, .linkinfo, .titlebox .bottom, .sidecontentbox .content, .menuarea, .md td, .md th, .developed-app, .authorized-app {
+	border-color: var(--grey) !important;
+}
+
+.message.new > .entry {
+	background: var(--second-bg) !important;
+	border-color: var(--grey);
+}
+
+.md blockquote {
+	border-left: 2px solid var(--grey) !important;
+}
+
+.gold-accent, #sr-more-link {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border-color: var(--main-fg) !important;
+}
+
+.footer, .title, .footer .col, .bottommenu {
+	color: var(--main-fg) !important;
+	border-color: var(--grey) !important;
+}
+
+.tabmenu li.selected a {
+	border-color: var(--blue) !important;
+}
+
+.message-count {
+	background: var(--second-bg);
+	color: var(--main-fg) !important;
+	font-size: 12px;
+}
+
+.fancy-toggle-button .remove {
+	background: var(--red);
+	color: var(--main-bg) !important;
+}
+
+.inline-image {
+	max-height: 300px;
+}
+
+#header-img {
+	filter: invert(1) !important;
+}
+
+.fancy-toggle-button .add {
+	background: var(--green) !important;
+	color: var(--main-bg) !important;
+}
+
+.md textarea {
+	width: 100%;
+	height: fit-content;
+	min-height: 200px;
+	padding: 10px;
+}
+
+.crosspost-preview, .drop-choices, .form-bar, .roundfield {
+	background: var(--second-bg) !important;
+	border-color: var(--grey) !important;
+}
+
+.gray {
+	color: var(--grey) !important;
+}
+
+.usertext.grayed .usertext-body {
+	background: #00000000;
+}
+
+.dropdown.lightdrop .selected {
+	background-image: none !important;
+}
+
+.link .crosspost-preview-content .self-divider {
+	border-color: var(--main-fg) !important;
+}
+
+.tagline .stickied-tagline, .search-result-meta .stickied-tagline {
+	color: var(--green) !important;
+}
+
+.crosspost-preview.video .crosspost-preview-content {
+	background: var(--second-bg) !important;
+}
+
+.md hr {
+	background: var(--grey) !important;
+}
+
+.morecomments {
+	margin-left: 25px;
+}
+
+.archived-infobar, .reddit-infobar {
+	background: var(--yellow) !important;
+	border-color: var(--border) !important;
+}
+
+.reddit-infobar.with-icon::before {
+	background-color: var(--yellow) !important;
+}
+
+.archived-infobar .md, .reddit-infobar .md {
+	color: var(--second-bg) !important;
+}
+
+.link {
+	margin-bottom: 0px;
+}
+
+.md-spoiler-text {
+	background: var(--border) !important;
+}
+
+.hover-bubble, .author-tooltip__head, .hover-bubble *, .author-tooltip__head * {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+	border-color: var(--border) !important;
+}
+
+.flairrichtext {
+	background: var(--grey) !important;
+	color: var(--main-fg) !important;
+	border: var(--border) !important;
+}
+
+.drop-choices a.choice:hover {
+	background: var(--border) !important;
+}
+
+#chat-app {
+	display: none !important;
+}
+
+.footer.rounded {
+	display: none !important;
+}

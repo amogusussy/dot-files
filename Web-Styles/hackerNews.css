@@ -1,0 +1,113 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+body {
+	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+* {
+	font-size: 16px !important;
+}
+
+#hnmain {
+	width: 70%;
+	background: var(--main-bg) !important;
+}
+
+a, .subtext, .rank, .yclinks, .c00, .c00 a:link, .c73, .c73 a:link, .c73 a:visited, .c5a, .c5a a:link, .c5a a:visited, td{
+	color: var(--main-fg) !important;
+}
+
+.title a, .reply a, .comhead, .comhead a {
+	color: var(--blue) !important;
+}
+
+.votearrow, .reply {
+	display: none;
+}
+
+#hnmain > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1), #hnmain > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+	background: var(--green) !important;
+	color: var(--main-bg) !important;
+}
+
+#hnmain > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a {
+	color: var(--main-bg) !important;
+}
+
+.default {
+	color: var(--main-fg) !important;
+	border-left: 1px solid var(--main-fg) !important;
+	padding-left: 15px !important;
+	margin-left: -20px;
+}
+
+textarea, input[type="submit"] {
+	background: var(--second-bg) !important;
+	border: 2px solid var(--border);
+	color: var(--main-fg) !important;
+	border-radius: 6px;
+	padding: 10px;
+	transition: 0.1s;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+input[type="submit"]:hover {
+	border-color: var(--red) !important;
+	color: var(--red) !important;
+}
+
+.ind[indent="1"] img {width: 20 !important;}
+.ind[indent="2"] img {width: 40 !important;}
+.ind[indent="3"] img {width: 60 !important;}
+.ind[indent="4"] img {width: 80 !important;}
+.ind[indent="5"] img {width: 100 !important;}
+.ind[indent="6"] img {width: 120 !important;}
+.ind[indent="7"] img {width: 140 !important;}
+.ind[indent="8"] img {width: 160 !important;}
+.ind[indent="9"] img {width: 180 !important;}
+.ind[indent="10"]img {width: 200 !important;}
+.ind {
+	user-select: none;
+}
+
+.default + .votelinks + .ind[indent="0"] {
+	background: var(--main-bg) !important;
+}
+
+.titleline a:visited {
+	color: var(--purple) !important;
+}
+
+.comment p {
+	width: 100% !important;
+}
+
+.comment {
+	padding: 5px;
+}
+
+a:hover {
+	color: var(--red) !important;
+}
+

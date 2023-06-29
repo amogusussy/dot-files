@@ -1,3 +1,30 @@
+:root {
+    --main-bg: #1a1b27;
+    --main-fg: #a9b1d6;
+
+    --result-link-fg: #7aa2f7;
+    --result-fg: #c0caf5;
+
+    --button-bg: #16161f;
+
+    --special-result-border: opacity 0;
+    --special-text-background: #16161f;
+    --special-text-color: #a9b1d6;
+
+    --search-container-text-color: #a9b1d6;
+    --search-container-background-color: #16161f;
+    --search-container-background-border: #414868;
+
+    --search-form-background-color: #1a1b27;
+    
+    --border: #414868;
+
+    --footer-fg: #a9b1d6;
+    --footer-bg: #16161f;
+    
+    color-scheme: dark;
+}
+
 html {
 	color: var(--main-fg);
 	background-color: var(--main-bg);
@@ -91,7 +118,6 @@ a:hover,
 }
 
 .sub-search-container input {
-	margin-bottom: 20px;
 	width: 580px;
 	position: relative;
 	left: 140px;
@@ -382,4 +408,8 @@ hr {
 
 .dropdown:hover .dropdown-content {
 	display: block;
+}
+
+.sub-search-button-wrapper > a:nth-child(5) {
+	display: none !important;
 }

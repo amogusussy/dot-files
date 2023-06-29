@@ -1,17 +1,37 @@
 :root {
-    --bg: #1a1b26 !important;
-    --fg: #c0caf5 !important;
-    --hover: #7aa2f7 !important;
-    --subscribe: #f7768e !important;
-    --link: #9ece6a !important;
+	--bg: var(--main-bg) !important;
+	--fg: var(--main-fg) !important;
+	--hover: var(--blue) !important;
+	--subscribe: var(--red) !important;
+	--link: var(--main-fg) !important;
 
-  --blue: #7aa2f7 !important;
-  --gray: #414868 !important;
+	--blue: #7aa2f7 !important;
+	--gray: #414868 !important;
+
+	
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+	
+	--player-height: 800px;
 }
 
-.pure-u-1 {
-    float: right !important;
-    height: fit-content !important;
+
+#contents {
+	width: 100% !important;
 }
 
 .pure-u-lg-1-5:nth-child(1) {
@@ -31,6 +51,7 @@
 .pure-u-lg-1-5:nth-child(1) .h-box {
   width: 500% !important;
 }
+
 .pure-u-lg-1-5:nth-child(1) *:not(a){
   padding-right: 10px !important;
 }
@@ -66,12 +87,10 @@ html body.no-theme .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g .pure-u-1.
 #annotations,
 #contents .h-box:nth-child(2) > h3:nth-child(1),
 form[action="/download"],
-#allowed_regions{
+#allowed_regions,
+div.pure-u-md-1-4:nth-child(2) > div > div:nth-child(3),
+.channel-profile{
     display: none !important;
-}
-
-.channel-profile {
-  width: 60px !important;
 }
 
 html body.dark-theme .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g.h-box .pure-u-2-3 .channel-profile {
@@ -110,7 +129,7 @@ hr {
 }
 
 a:hover, .dark-theme a:hover, .dark-theme a:active, .dark-theme summary:hover {
-    color: var(--hover) !important;
+    color: var(--red) !important;
 } a {
     color: var(--link) !important;
 }
@@ -126,7 +145,7 @@ a:hover, .dark-theme a:hover, .dark-theme a:active, .dark-theme summary:hover {
 button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widget {
   border: 0px !important;
   -webkit-box-shadow: inset 0 0px 0px #dddddd00 !important;
-  background-color: var(--subscribe) !important;
+  background-color: var(--red) !important;
 }
 
 .vjs-playback-rate {
@@ -144,6 +163,8 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 
 #player-container {
   width: 100% !important;
+	margin-left: -5px;
+	margin-right: -5px;
 }
 
 .pure-u-md-20-24, .pure-u-md-5-6 {
@@ -160,7 +181,12 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 }
 
 .pure-u-md-1-4{
-  width: calc(100%/5) !important;
+	max-width: 355px !important;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1em !important;
+	margin-bottom: 10px !important;
+	max-height: 100%
 }
 
 #download_widget {
@@ -190,12 +216,8 @@ a[title="Audio mode"] {
   margin-left: 10px !important;
 }
 
-.h-box:nth-child(5) > h1:nth-child(1) {
-  max-width: 55ch !important;
-}
-
 #player {
-  max-height: 800px !important;
+  max-height: var(--player-height) !important;
 }
 
 @media all and (display-mode: fullscreen) {
@@ -210,4 +232,51 @@ a[title="Audio mode"] {
 
 .h-box:nth-child(4) > h1:nth-child(1) {
 	max-width: 70ch !important;
+}
+
+#comments {
+	margin: 0px !important;
+}
+
+div.pure-u-md-1-4 {
+	background: var(--second-bg) !important;
+	border-radius: 15px;
+	margin: 0.75rem;
+	border: 2px solid var(--border);
+	transition: .2s;
+}
+
+div.pure-u-md-1-4:hover {
+	scale: 1.075;
+}
+
+#comments .pure-g[style] * {
+	background: var(--second-bg) !important;
+}
+
+#comments .pure-g[style] {
+	max-width: 80ch;
+	width: fit-content;
+	padding: 8px;
+	background: var(--second-bg) !important;
+	border: 1px solid var(--grey) !important;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+#comments .pure-g .pure-u-20-24 p:nth-child(3) {
+	display: none;
+}
+
+#replies p {
+	margin: none;
+	margin-bottom: 5px;
+}
+
+#comments .pure-g div:not(#replies) p:nth-child(1) {
+	margin: 0px;
+}
+
+.channel-owner {
+	padding: 0px !important;
 }

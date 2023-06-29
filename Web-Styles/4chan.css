@@ -19,7 +19,7 @@
 
 body, #menu, .dialog, .boxbar {
 	background: var(--main-bg) !important;
-	font-family: JetBrains Mono;
+	font-family: monospace;
 	color: var(--main-fg);
 }
 
@@ -55,7 +55,6 @@ hr#op,
 .fa-download,
 #globalMessage,
 #bannerCnt,
-.qr-link-container,
 .qr-link-container-bottom,
 .bottomCtrl,
 input[value="delete"],
@@ -64,20 +63,19 @@ input[value="delete"],
 div.backlink,
 .thread-stats,
 .threadHideButton,
-form[name="post"],
 #mpostform
 {
 	display: none !important;
+}
+
+form[name="post"] {
+	margin-bottom: 15px;
 }
 
 #postForm * {
 	color: var(--main-fg) !important;
 	background: var(--main-bg) !important;
 	border-color: var(--border) !important;
-}
-
-#postForm a {
-	color: var(--purple) !important;
 }
 
 #togglePostFormLink {
@@ -90,14 +88,15 @@ form[name="post"],
 
 #qr{
 	background: var(--second-bg) !important;
-	box-shadow: 3px 3px 20px black;
+	box-shadow: 3px 3px 20px #0f0f15;
+	overflow: hidden;
 }
 
-:root.yotsuba-b .qr-link {
-	border-color: var(--purple);
+.qr-link {
+	border-color: var(--grey) !important;
+	color: var(--main-fg) !important;
 	background: var(--second-bg) !important;
 }
-
 
 .textarea textarea, .persona input, select, input[type="button"], #qr-filename-container, #qr-filename-container::placeholder,
 input[type="text"], input[type="text"]:focus, input[type="submit"], #t-load, #t-help
@@ -105,6 +104,15 @@ input[type="text"], input[type="text"]:focus, input[type="submit"], #t-load, #t-
 	color: var(--main-fg) !important;
 	background: var(--second-bg) !important;
 	border: 1px solid var(--border) !important;
+}
+
+#qr form {
+	height: fit-content !important;
+	overflow: hidden !important;
+}
+
+.textarea textarea:focus, .persona input:focus, select:focus, input[type="button"]:focus, #qr-filename-container:focus, #qr-filename-container::placeholder:focus, input[type="text"]:focus, input[type="text"]:focus, input[type="submit"]:focus, #t-load:focus, #t-help {
+	border: 1px solid var(--purple) !important;
 }
 
 .catalog-post:hover {
@@ -135,7 +143,7 @@ hr {
 	color: var(--main-fg) !important;
 }
 
-div.post div.postInfo span.postNum > a {
+div.post div.postInfo span.postNum > a, #qr-filename {
 	color: var(--main-fg) !important;
 }
 
@@ -145,6 +153,9 @@ div.post div.postInfo span.postNum > a {
 
 .name {
 	color: var(--blue) !important;
+}
+
+.postInfo {
 	padding-left: 8px !important;
 }
 
@@ -161,11 +172,11 @@ input[type="text"], table.postForm > tbody textarea, input[type="password"], #re
 	border-left: var(--blue) solid 3px!important
 }
 
-:root.tomorrow.catalog-hover-expand .catalog-container:hover > .post {
+.catalog-hover-expand .catalog-container:hover > .post {
 	background-color: var(--post-bg) !important;
 }
 
-a, a:not(.quotelink):visited, a.replylink:not(:hover), div#absbot a:not(:hover) {
+a, a:not(.quotelink):not(.backlink), a.replylink:not(:hover), div#absbot a {
 	color: var(--purple) !important;	
 }
 
@@ -185,10 +196,6 @@ a, a:not(.quotelink):visited, a.replylink:not(:hover), div#absbot a:not(:hover) 
 #header-bar {
 	background: var(--main-bg) !important;
 	border: 0px;
-}
-
-a:hover, .watcher-link {
-	color: var(--blue) !important;
 }
 
 #fourchanx-settings, div[data-checked] {
@@ -237,8 +244,8 @@ span.pln {
 }
 
 .inline {
-	background: var(--main-bg) !important;
-	border-color: var(--main-fg) !important;
+	border: 1px solid var(--grey) !important;
+	margin-right: 15px;
 }
 
 
@@ -280,37 +287,8 @@ textarea::placeholder, input::placeholder, #qr-no-file, #t-resp::placeholder {
 	height: 100% !important;
 }
 
-.threadContainer {border-color: var(--red);}
-.threadContainer .threadContainer {border-color: var(--orange);}
-.threadContainer .threadContainer .threadContainer {border-color: var(--yellow);}
-.threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--green);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--light-blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--turquoise);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color:var(--blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--red);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--orange);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--yellow);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--green);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--light-blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--turquoise);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color:var(--blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--red);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--orange);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--yellow);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--green);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--light-blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--turquoise);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color:var(--blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--red);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--orange);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--yellow);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--green);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--light-blue);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color: var(--turquoise);}
-.threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer .threadContainer {border-color:var(--blue);}
-
-:root.yotsuba-b #menu {
-	color: var(--main-fg);
+#menu {
+	color: var(--main-fg) !important;
 }
 
 :root:not(.werkTyme) .catalog-thread.watched .catalog-thumb, :root:root.werkTyme .catalog-thread.watched:not(:hover), :root:root.werkTyme:not(.catalog-hover-expand) .catalog-thread.watched, :root.werkTyme.catalog-hover-expand .catalog-thread.watched > .catalog-container:hover > .catalog-post {
@@ -321,6 +299,9 @@ textarea::placeholder, input::placeholder, #qr-no-file, #t-resp::placeholder {
 	border: 1px solid var(--border) !important;
 }
 
+.reply:target, .reply.highlight {
+	border-color: var(--blue) !important;
+}
 
 .thread:not(.catalog-thread):not(.board) {
 	border-top: 2px solid var(--main-fg);
@@ -339,7 +320,7 @@ div.post div.postInfo {
 	background: var(--post-bg) !important;
 }
 
-.backlink:visited {
+.backlink:visited, a:hover, a:visited:hover, .watcher-link, div.navLinks:nth-child(21) > a:hover {
 	color: var(--blue) !important;
 }
 
@@ -379,4 +360,97 @@ div.post div.postInfo span.postNum a:hover, .posteruid .hand:hover {
 .message {
 	background: var(--second-bg);
 	color: var(--main-fg);
+}
+
+#hoverUI > #qp {
+	margin-right: 20px;
+}
+
+.container > .backlink:nth-child(1) {
+	margin-left: 5px;
+}
+
+.gal-fit-height .gal-image img, .gal-fit-height .gal-image video {
+	min-width: 400px !important;
+	max-height: 900px !important;
+}
+
+a.current:nth-child(1):hover, a.current:nth-child(2):hover, a.current:nth-child(3):hover, a.current:nth-child(4):hover {
+	color: var(--blue) !important;
+}
+
+#thread-stats {
+	background: #00000000 !important;
+}
+
+.replies-quoting-you > a, #watcher-link.replies-quoting-you, .last-page > a > .watcher-page {
+	color: var(--red) !important;
+}
+
+.qphl {
+	outline: 2px solid var(--red) !important;
+}
+
+#thread-stats .move span{
+	color: var(--red) !important;
+}
+
+.boardList {
+	color: var(--main-fg) !important;
+}
+
+.postContainer {
+	max-width: 1600px;
+	padding-right: 15px:
+}
+
+.file-info a:hover, a.quotelink:hover {
+	color: var(--blue) !important;
+}
+
+.gal-prev::after, .gal-next::after {
+	border: 12px solid var(--main-fg);
+    position: absolute;
+    top: 48.6%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    content: "";
+}
+
+.gal-prev::after {
+	right: 7px !important;
+} .gal-next::after {
+	right: -11px !important;
+}
+
+.inline {background:var(--main-bg) !important;}
+.inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--second-bg) !important;}
+.inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline .inline {background:var(--main-bg) !important;}
+
+
+.highlight-own .yourPost > .reply {
+	border-left: 3px dashed var(--blue) !important;
+}
+
+.highlight-you .quotesYou > .reply {
+	border-left: 3px solid var(--blue) !important;
 }

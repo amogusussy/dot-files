@@ -11,3 +11,20 @@
   --visited: #aaa !important;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
 }
+
+.post {
+	grid-template: "post_score post_header post_thumbnail" auto "post_score post_title  post_thumbnail" 1fr "post_score post_media  post_thumbnail" auto "post_score post_body   post_thumbnail" auto "post_score post_notification post_thumbnail" auto "post_score post_footer post_thumbnail" !important;
+}
+
+.post_score {
+	display: none !important;
+}
+
+.post_media_video, .post_media_video.short, .post_media * {
+	max-height: 100% !important;
+	width: 100% !important;
+}
+
+#sort_options, #listing_options, footer > a {
+	margin: auto;
+}

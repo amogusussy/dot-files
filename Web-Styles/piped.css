@@ -19,6 +19,14 @@
 	--player-height: 80vh;
 }
 
+body {
+	overflow-x: hidden;
+}
+
+* {
+	user-select: auto !important;
+}
+
 .dark, .modal-container{
 	background: var(--main-bg) !important;
 	color: var(--main-fg) !important;
@@ -54,13 +62,13 @@ table, hr {
 	border: 2px solid var(--second-bg);
 }
 
-.input::placeholder {
+::placeholder {
 	color: var(--main-fg) !important;
 	opacity: 0.7 !important;
 }
 
 .input:focus {
-	border-color: var(--red) !important;
+	outline-color: var(--red) !important;
 	box-shadow: 0 0 15px var(--red) !important;
 	box-shadow: none !important;
 }
@@ -122,8 +130,10 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 	margin-right: -19px !important;
 }
 
-/*.comment-content > .comment-footer,*/
-.delete-search{
+.delete-search, 
+.comment img, button[title="Add to playlist"],
+.video-grid > div > div > div:nth-child(3)
+{
 	display: none !important;
 }
 
@@ -139,7 +149,7 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 	scale: 1.075;
 }
 
-.video-grid > div > a > div > img{
+.video-grid > div > a > div > img {
 	border-radius: 8px !important;
 }
 
@@ -151,10 +161,6 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 .comment-author {
 	font-weight: bold;
 	color: var(--blue) !important;
-}
-
-.comment img {
-	display: none !important;
 }
 
 .comment {
@@ -177,4 +183,23 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 .m-2 {
 	margin: 0px;
 	margin-left: .5rem;
+}
+
+.video-grid div[height] img {
+	height: 180px;
+	margin: auto;
+	width: auto;
+}
+
+.thumbnail-overlay {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+.border-gray-500 {
+	border-color: var(--grey) !important;
+}
+
+.selected {
+	border: 1px solid var(--red) !important;
 }
