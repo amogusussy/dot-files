@@ -117,39 +117,39 @@ shred() {
   done;
 }
 
-# Override 'git clone' command
-git() {
-  local args=("$@")
-  local clone_cmd=("clone")
-
-  # Find the 'clone' command and its position in the arguments
-  for (( i=0; i<${#args[@]}; i++ )); do
-    if [[ ${args[$i]} == "clone" ]]; then
-      clone_cmd+=("${args[$((i+1))]}")
-      break
-    fi
-  done
-
-  # Check if the found 'clone' command is a GitHub repository
-  if [[ ${clone_cmd[1]} == https://github.com* ]]; then
-    local url=${clone_cmd[1]}
-    url=${url/https:\/\/github.com/git@github.com:}
-    url=${url%.git}.git
-    clone_cmd[1]="$url"
-  fi
-
-  # Replace the original 'clone' command with modified one
-  for (( i=0; i<${#args[@]}; i++ )); do
-    if [[ ${args[$i]} == "clone" ]]; then
-      args[$i]="${clone_cmd[@]}"
-      break
-    fi
-  done
-
-  printf "%s\n" "${clone_cmd[@]}"
-
-  /usr/bin/git ${args[@]}
-}
+# override 'git clone' command
+# git() {
+#   local args=("$@")
+#   local clone_cmd=("clone")
+#
+#   # find the 'clone' command and its position in the arguments
+#   for (( i=0; i<${#args[@]}; i++ )); do
+#     if [[ ${args[$i]} == "clone" ]]; then
+#       clone_cmd+=("${args[$((i+1))]}")
+#       break
+#     fi
+#   done
+#
+#   # check if the found 'clone' command is a github repository
+#   if [[ ${clone_cmd[1]} == https://github.com* ]]; then
+#     local url=${clone_cmd[1]}
+#     url=${url/https:\/\/github.com/git@github.com:}
+#     url=${url%.git}.git
+#     clone_cmd[1]="$url"
+#   fi
+#
+#   # replace the original 'clone' command with modified one
+#   for (( i=0; i<${#args[@]}; i++ )); do
+#     if [[ ${args[$i]} == "clone" ]]; then
+#       args[$i]="${clone_cmd[@]}"
+#       break
+#     fi
+#   done
+#
+#   printf "%s\n" "${clone_cmd[@]}"
+#
+#   /usr/bin/git ${args[@]}
+# }
 
 stream() {
   streamlink -p mpv $1 best
