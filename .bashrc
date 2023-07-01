@@ -179,7 +179,7 @@ paste-file() {
 }
 
 backup() {
-  rsync -av . /mnt/SteamDrive/Backups/29-May-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/"
+  rsync -av . /mnt/SteamDrive/Backups/01-July-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=".var/app/com.valvesoftware.Steam/.local/" --exclude="./.var/app/com.github.Eloston.UngoogledChromium/"
 }
 
 chadwm() {
