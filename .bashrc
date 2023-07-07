@@ -186,25 +186,29 @@ chadwm() {
   cd ~/.config/chadwm/chadwm/
   nvim ./config.h +NvimTreeToggle
 }
+#
+# function rm () {
+#   local args=()
+#   for arg in "$@"; do
+#     if [[ $arg == -* ]]; then
+#       # this argument starts with a dash, so we assume it's an option and skip it
+#       continue
+#     fi
+#     args+=("$arg")
+#   done
+#
+#   if [[ ${#args[@]} -eq 0 ]]; then
+#     echo "Error: No files or directories specified"
+#     return 1
+#   fi
+#
+#   for arg in "${args[@]}"; do
+#     gio trash "$arg"
+#   done
+# }
 
-function rm () {
-  local args=()
-  for arg in "$@"; do
-    if [[ $arg == -* ]]; then
-      # this argument starts with a dash, so we assume it's an option and skip it
-      continue
-    fi
-    args+=("$arg")
-  done
-
-  if [[ ${#args[@]} -eq 0 ]]; then
-    echo "Error: No files or directories specified"
-    return 1
-  fi
-
-  for arg in "${args[@]}"; do
-    gio trash "$arg"
-  done
+scrot() {
+  scrot -F ~/Pictures/screenshots/$(date "+%s") $@
 }
 
 printf "\e]0;haxxor terminal"
