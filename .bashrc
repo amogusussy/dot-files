@@ -91,7 +91,7 @@ reverse-output() {
 
 # Run startx when in tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    startx &
+    exec startx &
     sleep 20 && reverse-output
 fi
 
