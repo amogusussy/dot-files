@@ -29,6 +29,9 @@
 	--player-height: 800px;
 }
 
+body {
+	overflow-x: hidden !important;
+}
 
 #contents {
 	width: 100% !important;
@@ -60,6 +63,9 @@
     max-width: 100% !important;
 }
 
+.pure-menu-heading {
+	color: var(--main-fg) !important;
+}
 
 .length, .watched, #filters-box {
     background-color: var(--bg) !important;
@@ -93,7 +99,7 @@ div.pure-u-md-1-4:nth-child(2) > div > div:nth-child(3),
     display: none !important;
 }
 
-html body.dark-theme .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g.h-box .pure-u-2-3 .channel-profile {
+html body .pure-g #contents.pure-u-1.pure-u-md-20-24 .pure-g.h-box .pure-u-2-3 .channel-profile {
   width: 100% !important;
 }
 
@@ -128,7 +134,7 @@ hr {
     color: var(--fg) !important;
 }
 
-a:hover, .dark-theme a:hover, .dark-theme a:active, .dark-theme summary:hover {
+a:hover, a:hover, a:active, summary:hover {
     color: var(--red) !important;
 } a {
     color: var(--link) !important;
@@ -177,7 +183,7 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 }
 
 .pure-u-lg-3-5 {
-  width: 80% !important;
+  width: 70% !important;
 }
 
 .pure-u-md-1-4{
@@ -279,4 +285,41 @@ div.pure-u-md-1-4:hover {
 
 .channel-owner {
 	padding: 0px !important;
+}
+
+.pure-form input[type="color"], .pure-form input[type="date"], .pure-form input[type="datetime-local"], .pure-form input[type="datetime"], .pure-form input[type="email"], .pure-form input[type="month"], .pure-form input[type="number"], .pure-form input[type="password"], .pure-form input[type="search"], .pure-form input[type="tel"], .pure-form input[type="text"], .pure-form input[type="time"], .pure-form input[type="url"], .pure-form input[type="week"], .pure-form select, .pure-form textarea{
+	box-shadow: none !important;
+}
+
+#searchbox {
+	background: var(--second-bg) !important;
+	border: 2px solid #00000000 !important;
+	margin: auto !important;
+}
+
+#searchbox:focus {
+	border: 2px solid var(--red) !important;
+}
+
+/*
+html body.dark-theme div.pure-g div#contents.pure-u-1.pure-u-md-20-24 div.pure-g {
+	display: grid !important;
+	grid-template-columns: repeat(5, minmax(0,1fr)) !important;
+}
+
+.pure-u-md-1-4, .pure-u-md-6-24 {
+	width: auto !important;
+}*/
+
+.no-theme a:not([data-id]) > .icon, .no-theme .pure-u-lg-1-5 > .h-box > a[href^="/watch?"], .no-theme .playlist-restricted > ol > li > a {
+	color: var(--main-fg) !important;
+}
+
+div.pure-u-md-1-4:hover a[href] p[dir="auto"]:not(.channel-name) {
+	color: var(--red) !important;
+	cursor: pointer;
+}
+
+.pure-u-lg-1-5{
+	width: 25% !important;
 }
