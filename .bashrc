@@ -164,8 +164,9 @@ clear() {
 }
 
 update() {
-  doas flatpak update -y &&
-  doas xbps-install -Syu
+  doas xbps-install -Syu &&
+  flatpak update -y &&
+  pip update
 }
 
 rmnvswap() {
