@@ -30,7 +30,7 @@ a {
 	color: var(--main-fg) !important;
 }
 
-.help-toggle, .reddiquette, .flair, #sr-header-area .redesign-beta-optin, .giftgold, .trophy-area, .grippy, .listing-chooser, div.create > div:nth-child(2), #sr-more-link, .morelink .nub, .report-button, .give-gold-button, .archived-infobar.with-icon::before {
+.help-toggle, .reddiquette, .flair, #sr-header-area .redesign-beta-optin, .giftgold, .trophy-area, .grippy, .listing-chooser, div.create > div:nth-child(2), #sr-more-link, .morelink .nub, .report-button, .give-gold-button, .archived-infobar.with-icon::before, .read-next-container {
 	display: none !important;
 }
 
@@ -173,7 +173,7 @@ textarea:focus, input:focus {
 	color: var(--main-fg) !important;
 }
 
-.infobar, .md code, .md pre {
+.infobar:not(.commentsignupbar), .md code, .md pre, .message.new > .entry, .login-form-side, #new-link-image-input {
 	background: var(--second-bg) !important;
 	border-color: var(--grey) !important;
 }
@@ -208,16 +208,11 @@ button[type="submit"], .next-button a, button.cancel {
 	border-color: var(--grey) !important;
 }
 
-.message.new > .entry {
-	background: var(--second-bg) !important;
-	border-color: var(--grey);
-}
-
 .md blockquote {
 	border-left: 2px solid var(--grey) !important;
 }
 
-.gold-accent, #sr-more-link {
+.gold-accent, #sr-more-link, #new-link-video-preview, #new-link-media-progress, .popup-overlay, .popup-title-text {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 	border-color: var(--main-fg) !important;
@@ -343,4 +338,27 @@ button[type="submit"], .next-button a, button.cancel {
 
 .footer.rounded {
 	display: none !important;
+}
+
+.sr-list .selected a {
+	color: var(--red) !important;
+}
+
+.md .-lists, .md ul, .md ol {
+	padding-left: 20px !important;
+}
+
+.commentsignupbar__container {
+	background: var(--second-bg) !important;
+	color: var(--main-fg) !important;
+	border: 1px solid var(--border) !important;
+}
+
+.commentsignupbar__container .commentsignupbar__desc, .commentsignupbar__container .commentsignupbar__title {
+	color: var(--main-fg) !important;
+}
+
+.users-online::before {
+	background: var(--green) !important;
+	border-radius: 50%;
 }
