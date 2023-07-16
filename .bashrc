@@ -207,6 +207,24 @@ chadwm() {
 #   done
 # }
 
+mpv() {
+  local replacements=("piped.kavin.rocks" "piped.another.com" "piped.projectsegfau.lt")
+  local args=("$@")
+  local replaced_args=()
+
+  for arg in "${args[@]}"; do
+    local replaced_arg="$arg"
+    for replacement in "${replacements[@]}"; do
+      if [[ "$arg" == *"$replacement"* ]]; then
+        replaced_arg="${replaced_arg//$replacement/youtube.com}"
+      fi
+    done
+    replaced_args+=("$replaced_arg")
+  done
+  echo "${replaced_args[@]}"
+  /bin/mpv "${replaced_args[@]}"
+}
+
 scrot() {
   scrot -F ~/Pictures/screenshots/$(date "+%s") $@
 }
