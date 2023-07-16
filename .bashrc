@@ -208,7 +208,7 @@ chadwm() {
 # }
 
 mpv() {
-  local replacements=("piped.kavin.rocks" "piped.another.com" "piped.projectsegfau.lt")
+  local replacements=("piped.kavin.rocks" "piped.projectsegfau.lt" "piped.in.projectsegfau.lt" "piped.video")
   local args=("$@")
   local replaced_args=()
 
