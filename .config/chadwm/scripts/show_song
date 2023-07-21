@@ -2,7 +2,7 @@
 
 if playerctl -l | grep -q -i "elisa" >> /dev/null; then
   # n="  ^c#9ece6a^$(playerctl metadata artist --player elisa) - $(playerctl metadata title --player elisa) "
-  n="  $(playerctl metadata artist --player elisa) - $(playerctl metadata title --player elisa) "
+  n="$(playerctl metadata artist --player elisa) - $(playerctl metadata title --player elisa) "
 else
   printf ""
   exit
