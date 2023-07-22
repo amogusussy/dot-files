@@ -146,7 +146,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_space,   spawn,            SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
     { Mod1Mask,				                  XK_Delete,  spawn,		        SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
-    { MODKEY,                           XK_a,  	    spawn,            SHCMD("pavucontrol")},
+    { MODKEY,                           XK_a,  	    spawn,            SHCMD("alacritty -e pulsemixer")},
     { MODKEY|ShiftMask,                 XK_a,  	    spawn,            SHCMD("fixaudio")},
 
     // toggle stuff
