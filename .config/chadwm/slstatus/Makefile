@@ -10,7 +10,7 @@ COM =\
 	components/datetime\
 	components/ram\
 	components/run_command\
-	components/netspeeds\
+	 components/netspeeds\
 	# components/battery\
 	# components/cat\
 	# components/cpu\
