@@ -37,6 +37,7 @@ alias ke='pkill electron'
 alias kf='pkill firefox'
 alias kl='pkill librewolf'
 alias kx='pkill Xorg'
+alias kd='pkill discord && pkill socat'
 
 # Doas 
 alias dias='doas'
