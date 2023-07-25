@@ -110,8 +110,8 @@ static const Layout layouts[] = {
     { " ",        NULL},
     { " ",        NULL},
     { " ",        NULL},
-    { "|M|",      centeredmaster },
-    { ">M>",      centeredfloatingmaster },
+    // { "|M|",      centeredmaster },
+    // { ">M>",      centeredfloatingmaster },
     { "><>",      NULL },    /* no layout function means floating behavior */
     { NULL,       NULL },
 };

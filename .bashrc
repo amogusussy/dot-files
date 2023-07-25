@@ -182,7 +182,7 @@ paste-file() {
 backup() {
   excludes=$(printf " --exclude=\"%s\"" $(ls ~/.var/app/ -1 | /bin/grep -Pv "librewolf|qbittorrent"))
 
-  echo $excludes | xargs rsync -av . /mnt/SteamDrive/Backups/01-July-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=~/.var/app/com.valvesoftware.Steam/.local/ --exclude=/home/matthew/.var/app/com.github.Eloston.UngoogledChromium/
+  echo $excludes | xargs rsync -av . /mnt/SteamDrive/Backups/25-July-Back/ --exclude=Games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=~/.var/app/com.valvesoftware.Steam/.local/ --exclude=/home/matthew/.var/app/com.github.Eloston.UngoogledChromium/
 }
 
 chadwm() {
