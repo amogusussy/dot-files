@@ -4,4 +4,4 @@ now=$(date "+%s")
 
 dbus-run-session pipewire > /home/matthew/.logs/pipewire/pipewire-$now &
 dbus-run-session pipewire-pulse > /home/matthew/.logs/pipewire/pipewire-pulse-$now &
-echo
+pause
