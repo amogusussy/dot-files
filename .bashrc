@@ -238,5 +238,7 @@ export EDITOR='nvim'
 
 # History
 export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq:m:history'
-export HISTSIZE=1000000
+# No HISTSIZE means no limit.
+export HISTSIZE= 
+export HISTFILESIZE=
 export HISTTIMEFORMAT='%d/%m/%y %T '
