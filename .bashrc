@@ -242,3 +242,4 @@ export HISTIGNORE=' *:q:qq:clear:clea:shred:ckear:#:ks:kl:kq:m:history'
 export HISTSIZE= 
 export HISTFILESIZE=
 export HISTTIMEFORMAT='%d/%m/%y %T '
+. "$HOME/.cargo/env"
