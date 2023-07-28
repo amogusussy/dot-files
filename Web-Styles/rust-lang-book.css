@@ -1,0 +1,85 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--post-bg: #1a1b26;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+}
+
+.light {
+	--bg: var(--main-bg);
+	--fg: var(--main-fg);
+	--sidebar-bg: var(--second-bg);
+	--sidebar-fg: var(--main-fg);
+	--sidebar-non-existant: var(--border);
+	--sidebar-active: var(--blue);
+	--sidebar-spacer: var(--second-bg);
+	--scrollbar: var(--border);
+	--icons: var(--grey);
+	--icons-hover: var(--main-fg);
+	--links: var(--blue);
+	--inline-code-color: var(--main-fg);
+	--theme-popup-bg: var(--second-bg);
+	--theme-popup-border: var(--border);
+	--theme-hover: var(--second-bg);
+	--quote-bg: var(--second-bg);
+	--quote-border: var(--border);
+	--table-border-color: var(--border);
+	--table-header-bg: var(--grey);
+	--table-alternate-bg: var(--second-bg);
+	--searchbar-border-color: var(--border);
+	--searchbar-bg: var(--second-bg);
+	--searchbar-fg: var(--main-fg);
+	--searchbar-shadow-color: var(--main-fg);
+	--searchresults-header-fg: var(--grey);
+	--searchresults-border-color: var(--border);
+	--searchresults-li-bg: var(--second-bg);
+	--search-mark-bg: var(--second-bg);
+}
+
+code {
+	background: var(--second-bg) !important;
+	border: 1px solid var(--border) !important;
+	padding: 8px;
+	overflow-x: scroll;
+	color: var(--main-fg) !important;
+}
+
+.hljs-string, .hljs-symbol, .hljs-bullet {
+	color: var(--green);
+}
+
+.hljs-number, .hljs-meta, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params {
+	color: var(--red);
+}
+
+.hljs-keyword, .hljs-selector-tag {
+	color: var(--purple);
+}
+
+.hljs-comment, .hljs-quote {
+	color: var(--grey);
+}
+
+.hljs-title, .hljs-section {
+	color: var(--blue);
+}
+
+.hljs-meta {
+	color: var(--main-fg);
+}
+
+.menu-title {
+	display: none !important;
+}
