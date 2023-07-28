@@ -93,11 +93,11 @@ const char *
 fmt_human(uintmax_t num, int base)
 {
 	double scaled;
-	size_t i;
+	unsigned int i;
   const char *prefix[2] = { "M", "G" };
 
 	scaled = num;
-	for (i = 0; i < 2 && scaled >= base; i++)
+	for (i = 0; i < 4 && scaled >= base; i++)
 		scaled /= base;
 
 	return bprintf("%.1f%s", scaled, prefix[i - 2]);
