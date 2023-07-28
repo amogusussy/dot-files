@@ -89,54 +89,18 @@ bprintf(const char *fmt, ...)
 	return (ret < 0) ? NULL : buf;
 }
 
-// const char *
-// fmt_human(uintmax_t num, int base)
-// {
-// 	double scaled;
-// 	size_t i, prefixlen;
-// 	const char **prefix;
-//
-//   if (base == 1000) {
-//     const char *prefix_1000[] = { "", "k", "M", "G", "T", "P", "E", "Z",
-// 	                                "Y" };
-//     prefix = prefix_1000;
-//   } else if (base == 1024) {
-// 	  const char *prefix_1024[] = { "", "Ki", "Mi", "G", "Ti", "Pi", "Ei",
-// 	                                "Zi", "Yi" };
-//     prefix = prefix_1024;
-//   }
-//   prefixlen = LEN(prefix);
-//
-// 	scaled = num;
-// 	for (i = 0; i < prefixlen && scaled >= base; i++)
-// 		scaled /= base;
-//
-// 	return bprintf("%.1f%s", scaled, prefix[i]);
-// }
-
 const char *
 fmt_human(uintmax_t num, int base)
 {
 	double scaled;
-	// size_t i, prefixlen;
 	size_t i;
-	const char **prefix;
-	const char *prefix_1000[9] = { "", "k", "M", "G", "T", "P", "E", "Z",
-	                              "Y" };
-	const char *prefix_1024[9] = { "", "Ki", "Mi", "G", "Ti", "Pi", "Ei",
-	                              "Zi", "Yi" };
-
-  if (base >> 10) { // Checks if base == 1024 (2^10)
-		prefix = prefix_1024;
-  } else {
-		prefix = prefix_1000;
-  }
+  const char *prefix[2] = { "M", "G" };
 
 	scaled = num;
-	for (i = 0; i < 9 /*prefixlen*/ && scaled >= base; i++)
+	for (i = 0; i < 2 && scaled >= base; i++)
 		scaled /= base;
 
-	return bprintf("%.1f%s", scaled, prefix[i]);
+	return bprintf("%.1f%s", scaled, prefix[i - 2]);
 }
 
 int
