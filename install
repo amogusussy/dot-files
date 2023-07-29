@@ -1,0 +1,12 @@
+#!/bin/bash
+
+void_packages=("opendoas" "alacritty" "mpv" "neovim" "rofi" "zathura" "zathura-pdf-mupdf" "flatpak" "libX11-devel" "libXft-devel" "libXinerama")
+
+sudo xbps-install ${void_packages[@]}
+echo "permit :wheel" | sudo tee -a /etc/doas.conf
+
+mkdir ~/.config/
+cp -r ./.config/* ~/.config/
+
+doas make install -C ~/.config/chadwm/chadwm/
+doas make install -C ~/.config/chadwm/slstatus/
