@@ -76,16 +76,16 @@ static const unsigned int ulinestroke   = 2; /* thickness / height of the underl
 static const unsigned int ulinevoffset  = 0; /* how far above the bottom of the bar the line should appear */
 static const int ulineall               = 0; /* 1 to show underline on all tags, 0 for just the active ones */
 
-// static const Rule rules[] = {
-//     /* xprop(1):
-//      *	WM_CLASS(STRING) = instance, class
-//      *	WM_NAME(STRING) = title
-//      */
-//     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
-//     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-//     { "Firefox",  NULL,       NULL,       256,          0,           0,           -1 },
-//     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
-// };
+static const Rule rules[] = {
+    /* xprop(1):
+     *	WM_CLASS(STRING) = instance, class
+     *	WM_NAME(STRING) = title
+     */
+    /* class      instance    title       tags mask     iscentered   isfloating   monitor */
+    { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+    { "Firefox",  NULL,       NULL,       256,          0,           0,           -1 },
+    { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
+};
 
 /* layout(s) */
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
