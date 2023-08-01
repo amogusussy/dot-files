@@ -228,13 +228,6 @@ static const Key keys[] = {
     // kill window
     { MODKEY,                           XK_q,       killclient,     {0} },
 
-    // restart
-    { MODKEY|ShiftMask,                 XK_r,       restart,        {0} },
-
-    // hide & restore windows
-    { MODKEY,                           XK_e,       hidewin,        {0} },
-    { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
-
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)
     TAGKEYS(                            XK_3,                       2)

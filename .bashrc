@@ -233,7 +233,7 @@ scrot() {
 }
 
 printf "\e]0;haxxor terminal"
-printf "\x1b[\x3"
+# printf "\x1b[\x3"
 export EDITOR='nvim'
 
 # History
