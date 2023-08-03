@@ -1,8 +1,7 @@
-export PATH=$PATH:~/.local/bin:~/.nimble/bin
+export PATH=$PATH:~/.local/bin
 
 if [[ $- != *i* ]]; then
-  return
-  # If not running interactively, don't do anything
+  return # If not running interactively, don't do anything
 fi
 
 # General aliases
