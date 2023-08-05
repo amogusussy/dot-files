@@ -1,6 +1,5 @@
 #!/bin/bash
-cp ~/.config/mpv/mpv.conf ./.config/mpv/mpv.conf
-cp ~/.config/mpv/input.conf ./.config/mpv/input.conf
+cp ~/.config/mpv/*.conf ./.config/mpv/
 cp ~/.bashrc .
 
 directories=("chadwm" "zathura" "rofi" "nvim" "alacritty")
