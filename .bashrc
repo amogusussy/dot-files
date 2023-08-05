@@ -169,7 +169,7 @@ update() {
 }
 
 rmnvswap() {
-  file="$(printf "$(pwd)/$1\n" | sed -e "s/\//%/g").swap"
+  file="$(printf "$(pwd)/$1\n" | sed -e "s/\//%/g").swp"
   rm -f "$HOME/.local/state/nvim/swap/$file"
 }
 
@@ -228,7 +228,7 @@ mpv() {
 }
 
 scrot() {
-  scrot -F ~/Pictures/screenshots/$(date "+%s") $@
+  /bin/scrot -F ~/Pictures/screenshots/$(date "+%s").png $@
 }
 
 printf "\e]0;haxxor terminal"
