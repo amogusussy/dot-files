@@ -181,7 +181,7 @@ paste-file() {
 backup() {
   excludes=$(printf " --exclude=\"%s\"" $(ls ~/.var/app/ -1 | /bin/grep -Pv "librewolf|qbittorrent"))
 
-  echo $excludes | xargs rsync -av . /mnt/SteamDrive/Backups/05-Aug-Back/ --exclude=.games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=~/.var/app/com.valvesoftware.Steam/.local/ --exclude=/home/matthew/.var/app/com.github.Eloston.UngoogledChromium/
+  echo $excludes | xargs rsync -av . /mnt/HoarderDrive/Backups/05-Aug-Back/ --exclude=.games/ --exclude=Torrents --exclude=.local/share/flatpak/ --exclude=.cache/ --exclude=~/.var/app/com.valvesoftware.Steam/.local/ --exclude=/home/matthew/.var/app/com.github.Eloston.UngoogledChromium/
 }
 
 chadwm() {
@@ -242,3 +242,4 @@ export HISTSIZE=
 export HISTFILESIZE=
 export HISTTIMEFORMAT='%d/%m/%y %T '
 . "$HOME/.cargo/env"
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
