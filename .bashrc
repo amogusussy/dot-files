@@ -4,6 +4,12 @@ if [[ $- != *i* ]]; then
   return # If not running interactively, don't do anything
 fi
 
+# Run startx when in tty
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    exec startx &
+    sleep 20 && reverse-output
+fi
+
 # General aliases
 PS1="$(date +%I:%M) \W $ "
 alias ls='ls --color=auto --file-type'
@@ -88,12 +94,6 @@ reverse-output() {
 
   pactl set-default-sink reverse-stereo
 }
-
-# Run startx when in tty
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec startx &
-    sleep 20 && reverse-output
-fi
 
 shred() {
   for i in "$@"
