@@ -59,6 +59,8 @@ alias lsl='ls'
 alias cls='ls'
 alias sl='ls'
 alias sls='ls'
+alias la='ls'
+alias ll='ls'
 alias ccd='cd'
 alias d='cd'
 
