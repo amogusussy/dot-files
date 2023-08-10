@@ -19,5 +19,7 @@ ram_used(const char *unused)
              "Cached: %ju kB\n",
              &total, &free, &buffers, &buffers, &cached); 
 
-  return fmt_human((total - free - (buffers << 1) - cached) << 10, BASE); // shift to multiply by 1024
+  return fmt_human(
+      (total - free - (buffers << 1) - cached) << 10, BASE
+    ); // shift to multiply by 1024
 }
