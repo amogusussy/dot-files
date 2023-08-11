@@ -1,8 +1,3 @@
-::selection {
-	background: var(--blue) !important;
-	color: var(--main-bg) !important;
-}
-
 body, #menu, .dialog, .boxbar {
 	background: var(--main-bg) !important;
 	font-family: monospace;
