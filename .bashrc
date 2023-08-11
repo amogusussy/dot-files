@@ -21,7 +21,8 @@ alias python='python3'
 alias grep="grep --color=auto -n"
 alias fdd=fd
 
-# Vim aliases alias vim='nvim'
+# Vim aliases 
+alias vim='nvim'
 alias vi='nvim'
 alias nvi='nvim'
 alias vm='nvim'
@@ -234,7 +235,6 @@ scrot() {
 }
 
 printf "\e]0;haxxor terminal"
-# printf "\x1b[\x3"
 export EDITOR='nvim'
 
 # History
