@@ -1,28 +1,21 @@
 :root {
-    --main-bg: #1a1b27;
-    --main-fg: #a9b1d6;
+    --result-link-fg: var(--blue);
+    --result-fg: var(--main-fg);
 
-    --result-link-fg: #7aa2f7;
-    --result-fg: #c0caf5;
-
-    --button-bg: #16161f;
+    --button-bg: var(--second-bg);
 
     --special-result-border: opacity 0;
-    --special-text-background: #16161f;
-    --special-text-color: #a9b1d6;
+    --special-text-background: var(--second-bg);
+    --special-text-color: var(--main-fg);
 
-    --search-container-text-color: #a9b1d6;
-    --search-container-background-color: #16161f;
-    --search-container-background-border: #414868;
+    --search-container-text-color: var(--main-fg);
+    --search-container-background-color: var(--second-bg);
+    --search-container-background-border: var(--border);
 
-    --search-form-background-color: #1a1b27;
-    
-    --border: #414868;
+    --search-form-background-color: var(---bg);
 
-    --footer-fg: #a9b1d6;
-    --footer-bg: #16161f;
-    
-    color-scheme: dark;
+    --footer-fg: var(--main-fg);
+    --footer-bg: var(--second-bg);
 }
 
 html {
@@ -413,3 +406,4 @@ hr {
 .sub-search-button-wrapper > a:nth-child(5) {
 	display: none !important;
 }
+

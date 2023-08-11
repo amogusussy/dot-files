@@ -1,31 +1,4 @@
 :root {
-	--bg: var(--main-bg) !important;
-	--fg: var(--main-fg) !important;
-	--hover: var(--blue) !important;
-	--subscribe: var(--red) !important;
-	--link: var(--main-fg) !important;
-
-	--blue: #7aa2f7 !important;
-	--gray: #414868 !important;
-
-	
-	--main-bg: #1a1b26;
-	--main-fg: #c0caf5;
-	--post-bg: #1a1b26;
-	--border: #24283b;
-	--second-bg: #161620;
-	--grey: #565f89;
-	--placeholder: #c0caf578;
-
-	--purple: #bb9af7;
-	--red: #f7768e;
-	--orange: #ff9e64;
-	--yellow: #e0af68;
-	--green: #9ece6a;
-	--blue: #7aa2f7;
-	--turquoise: #2ac3de;
-	--light-blue: #73daca;
-	
 	--player-height: 800px;
 }
 
@@ -68,14 +41,14 @@ body {
 }
 
 .length, .watched, #filters-box {
-    background-color: var(--bg) !important;
+    background-color: var(--main-bg) !important;
 }
 
 button.pure-button-primary,
 body a.pure-button-primary,
 .channel-owner:hover {
   background-color: #a0a0a0 !important;
-  color: var(--bg) !important;
+  color: var(--main-bg) !important;
 }
 
 
@@ -126,18 +99,18 @@ h5.pure-g {
 }
 
 hr {
-    color: var(--fg) !important;
+    color: var(--main-fg) !important;
 }
 
 .pure-g {
-    background-color: var(--bg) !important;
-    color: var(--fg) !important;
+    background-color: var(--main-bg) !important;
+    color: var(--main-fg) !important;
 }
 
 a:hover, a:hover, a:active, summary:hover {
     color: var(--red) !important;
 } a {
-    color: var(--link) !important;
+    color: var(--accent) !important;
 }
 
 .pure-u-1 .pure-u-lg-1-5 .h-box a p:not(.length){
@@ -155,16 +128,16 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 }
 
 .vjs-playback-rate {
-    color: var(--fg) !important;
+    color: var(--main-fg) !important;
 }
 .pure-input-1 {
-    background-color: var(--bg) !important;
-    border: 1px solid var(--fg) !important;
-    color: var(--fg) !important;
+    background-color: var(--main-bg) !important;
+    border: 1px solid var(--main-fg) !important;
+    color: var(--main-fg) !important;
 }
 
 .pure-u-1 .pure-u-md-1-3 a {
-    color: var(--fg) !important;
+    color: var(--main-fg) !important;
 }
 
 #player-container {
@@ -200,13 +173,13 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 }
 
 .vjs-control-bar {
-  background: var(--bg) !important;
-  color: var(--fg) !important;
+  background: var(--main-bg) !important;
+  color: var(--main-fg) !important;
 }
 
 #searchbox {
   border-color: rgba(0,0,0,0) !important;
-    border-bottom-color: var(--fg) !important;
+    border-bottom-color: var(--main-fg) !important;
 }
 
 .video-js.player-style-invidious .vjs-play-progress {
@@ -215,7 +188,7 @@ button:not(.vjs-control):not(.vjs-menu-button-popup), #subscribe, #download_widg
 
 .video-js .vjs-load-progress,
 .video-js .vjs-load-progress div {
-  background-color: var(--gray) !important;
+  background-color: var(--grey) !important;
 }
 
 a[title="Audio mode"] {
@@ -275,7 +248,7 @@ div.pure-u-md-1-4:hover {
 }
 
 #replies p {
-	margin: none;
+	margin: 0px;
 	margin-bottom: 5px;
 }
 
@@ -322,4 +295,8 @@ div.pure-u-md-1-4:hover a[href] p[dir="auto"]:not(.channel-name) {
 
 .pure-u-lg-1-5{
 	width: 25% !important;
+}
+
+.no-theme a:hover, .no-theme a:active, .no-theme summary:hover, .no-theme a:focus, .no-theme summary:focus {
+	color: var(--red) !important;
 }

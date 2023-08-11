@@ -1,22 +1,18 @@
 :root {
-	--main-bg: #1a1b26;
-	--main-fg: #c0caf5;
-	--post-bg: #1a1b26;
-	--border: #24283b;
-	--second-bg: #161620;
-	--grey: #565f89;
-	--placeholder: #c0caf578;
-
-	--purple: #bb9af7;
-	--red: #f7768e;
-	--orange: #ff9e64;
-	--yellow: #e0af68;
-	--green: #9ece6a;
-	--blue: #7aa2f7;
-	--turquoise: #2ac3de;
-	--light-blue: #73daca;
-	
 	--player-height: 80vh;
+	--player-base: #aaa8a86b;
+	--player-buffered: #767676;
+	--player-played: var(--accent);
+	--spon-seg-sponsor: var(--green);
+	--spon-seg-selfpromo: var(--yellow);
+	--spon-seg-interaction: var(--purple);
+	--spon-seg-poi_highlight: var(--pink);
+	--spon-seg-intro: var(--light-blue);
+	--spon-seg-outro: var(--blue);
+	--spon-seg-preview: var(--turquoise);
+	--spon-seg-filler: var(--purple);
+	--spon-seg-music_offtopic: var(--orange);
+	--spon-seg-default: var(--main-fg);
 }
 
 .dark #spinner::after {
@@ -32,13 +28,13 @@ body {
 	user-select: auto !important;
 }
 
-.dark, .modal-container{
+.dark {
 	background: var(--main-bg) !important;
 	color: var(--main-fg) !important;
 }
 
 .dark .input, .dark .select, .dark .btn, .dark .pref:nth-child(2n+1), .dark footer,
-.dark .suggestions-container, .bg-gray-500\/50, .bg-red-500\/50 {
+.dark .suggestions-container, .bg-gray-500\/50, .bg-red-500\/50, .thumbnail-overlay {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 }
@@ -52,15 +48,15 @@ table, hr {
 }
 
 .active {
-	border: var(--red) solid 2px !important;
+	border: var(--accent) solid 2px !important;
 }
 
 .order-first > div:nth-child(3) > div {
 	margin-bottom: 15px !important;
 }
 
-.dark .suggestion-selected {
-	background: var(--main-bg)
+.dark .suggestion-selected, .chapter-vertical:hover, .dark .modal-container[data-v-ef2fb5eb]  {
+	background: var(--main-bg) !important;
 }
 
 .input {
@@ -73,8 +69,8 @@ table, hr {
 }
 
 .input:focus {
-	outline-color: var(--red) !important;
-	box-shadow: 0 0 15px var(--red) !important;
+	outline-color: var(--accent) !important;
+	box-shadow: 0 0 15px var(--accent) !important;
 	box-shadow: none !important;
 }
 
@@ -83,7 +79,7 @@ table, hr {
 }
 
 a:hover, a *:hover, a:active, a *:active, .text-neutral-500, span.flex:nth-child(1):hover {
-	color: var(--red) !important;
+	color: var(--accent) !important;
 	text-decoration: none !important;
 }
 
@@ -93,7 +89,7 @@ a:hover, a *:hover, a:active, a *:active, .text-neutral-500, span.flex:nth-child
 }
 
 .bg-red-600 {
-	background: var(--red) !important;
+	background: var(--accent) !important;
 }
 
 .shaka-scrim-container {
@@ -116,10 +112,6 @@ h2.mb-2 {
 	height: var(--player-height) !important;
 }
 
-.chapter-vertical:hover {
-	background: var(--main-bg) !important;
-}
-
 .suggestions-container {
 	padding: 7px !important;
 	border-radius: 5px !important;
@@ -131,13 +123,14 @@ h2.mb-2 {
 }
 
 div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
-	margin-left: -19px !important;
-	margin-right: -19px !important;
+	margin-left: -1vw !important;
+	margin-right: -1vw !important;
 }
 
-.delete-search, 
-.comment img, button[title="Add to playlist"],
-.video-grid > div > div > div:nth-child(3)
+.comment img, 
+button[title="Add to playlist"],
+.video-grid > div > div > div:nth-child(3),
+svg[data-icon="check"]
 {
 	display: none !important;
 }
@@ -168,6 +161,10 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 	color: var(--blue) !important;
 }
 
+.comment-author:hover a {
+	text-decoration: underline !important;
+}
+
 .comment {
 	background: var(--second-bg);
 	width: fit-content;
@@ -196,17 +193,12 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 	width: auto;
 }
 
-.thumbnail-overlay {
-	background: var(--second-bg) !important;
-	color: var(--main-fg) !important;
-}
-
 .border-gray-500 {
 	border-color: var(--grey) !important;
 }
 
 .selected {
-	border: 1px solid var(--red) !important;
+	border: 1px solid var(--accent) !important;
 }
 
 .chapter-vertical:hover {
@@ -221,3 +213,59 @@ div.w-full:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
 .shaka-current-time[disabled], .shaka-controls-button-panel > * {
 	color: var(--main-fg) !important;
 }
+
+#search-btn {
+	display: none;
+}
+
+.w-72 {
+	width: 22rem;
+	border-radius: 4px;
+	border-color: var(--border) !important;
+}
+
+img.w-full {
+	border-radius: 12px;
+}
+
+.md\:h-50.w-full {
+	border-radius: 25px;
+}
+
+.btn {
+	border: 2px solid var(--border) !important;
+}
+
+.btn.active {
+	border-color: var(--accent) !important;
+	color: var(--accent) !important;
+}
+
+.btn:hover {
+	color: var(--accent) !important;
+}
+
+.delete-search {
+	opacity: 1 !important;
+	background: var(--main-fg) !important;
+}
+
+
+@media only screen and (max-width: 1013px) {
+	.overflow-y-scroll {
+		max-width: 100% !important;
+	}
+}
+
+.md\:h-50 {
+	height: fit-content !important;
+}
+
+.order-first > div:nth-child(4) > div {
+	margin-bottom: 10px;
+}
+
+.shaka-controls-container[shown="true"] ~ .shaka-text-container {
+	bottom: 4%;
+}
+

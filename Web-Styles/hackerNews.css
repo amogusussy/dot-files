@@ -1,20 +1,5 @@
 :root {
-	--main-bg: #1a1b26;
-	--main-fg: #c0caf5;
-	--post-bg: #1a1b26;
-	--border: #24283b;
-	--second-bg: #161620;
-	--grey: #565f89;
-	--placeholder: #c0caf578;
-
-	--purple: #bb9af7;
-	--red: #f7768e;
-	--orange: #ff9e64;
-	--yellow: #e0af68;
-	--green: #9ece6a;
-	--blue: #7aa2f7;
-	--turquoise: #2ac3de;
-	--light-blue: #73daca;
+	--indent: 20px;
 }
 
 body {
@@ -28,7 +13,8 @@ body {
 
 #hnmain {
 	width: 70%;
-	background: var(--main-bg) !important;
+	background: var(--second-bg);
+	padding: 15px;
 }
 
 a, .subtext, .rank, .yclinks, .c00, .c00 a:link, .c73, .c73 a:link, .c73 a:visited, .c5a, .c5a a:link, .c5a a:visited, td{
@@ -60,7 +46,7 @@ a, .subtext, .rank, .yclinks, .c00, .c00 a:link, .c73, .c73 a:link, .c73 a:visit
 }
 
 textarea, input[type="submit"] {
-	background: var(--second-bg) !important;
+	background: var(--main-bg) !important;
 	border: 2px solid var(--border);
 	color: var(--main-fg) !important;
 	border-radius: 6px;
@@ -77,16 +63,16 @@ input[type="submit"]:hover {
 	color: var(--red) !important;
 }
 
-.ind[indent="1"] img {width: 20 !important;}
-.ind[indent="2"] img {width: 40 !important;}
-.ind[indent="3"] img {width: 60 !important;}
-.ind[indent="4"] img {width: 80 !important;}
-.ind[indent="5"] img {width: 100 !important;}
-.ind[indent="6"] img {width: 120 !important;}
-.ind[indent="7"] img {width: 140 !important;}
-.ind[indent="8"] img {width: 160 !important;}
-.ind[indent="9"] img {width: 180 !important;}
-.ind[indent="10"]img {width: 200 !important;}
+.ind[indent="1"] img {width: calc(var(--indent) * 1) !important;}
+.ind[indent="2"] img {width: calc(var(--indent) * 2) !important;}
+.ind[indent="3"] img {width: calc(var(--indent) * 3) !important;}
+.ind[indent="4"] img {width: calc(var(--indent) * 4) !important;}
+.ind[indent="5"] img {width: calc(var(--indent) * 5) !important;}
+.ind[indent="6"] img {width: calc(var(--indent) * 6) !important;}
+.ind[indent="7"] img {width: calc(var(--indent) * 7) !important;}
+.ind[indent="8"] img {width: calc(var(--indent) * 8) !important;}
+.ind[indent="9"] img {width: calc(var(--indent) * 9) !important;}
+.ind[indent="10"] img {width: calc(var(--indent) * 10) !important;}
 .ind {
 	user-select: none;
 }
@@ -111,3 +97,15 @@ a:hover {
 	color: var(--red) !important;
 }
 
+.c9c, .c9c a:link, .c9c a:visited {
+	color: var(--main-fg);
+}
+
+[bgcolor="#ff6600"] {
+	background: var(--green) !important;
+	color: var(--main-bg) !important;
+}
+
+.pagetop b, .pagetop a {
+	color: var(--main-bg) !important;
+}

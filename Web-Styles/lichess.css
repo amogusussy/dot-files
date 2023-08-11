@@ -1,15 +1,9 @@
-:root {
-	--main-bg: #1a1b26;
-	--second-bg: #24283b;
-	--main-fg: #c0caf5;
-
-	--button: #7aa2f7;
-	--red: #f7768e;
-	--green: #9ece6a;
-}
-
 body, .lobby__app__content {
 	background: var(--main-bg) !important;
+	color: var(--main-fg) !important;
+}
+
+* {
 	color: var(--main-fg) !important;
 }
 
@@ -28,7 +22,7 @@ body, .lobby__app__content {
 }
 
 .button {
-	background: var(--button) !important;
+	background: var(--blue) !important;
 	color: #fff !important;
 }
 
@@ -90,4 +84,37 @@ input, textarea, select {
 
 .puzzle__session a.result-false.result-empty::before {
 	content: "" !important;
+}
+
+
+.lpools > div {
+	background: var(--second-bg) !important;
+	border: 1px solid var(--border) !important;
+}
+
+.lpools > div:hover {
+	scale: 1.05 !important;
+}
+
+.lobby__box__top, #hook .opponent {
+	background: var(--second-bg) !important;
+}
+
+tr:nth-child(2n){
+	background: var(--main-bg) !important;
+} tr:nth-child(2n - 1 ){
+	background: var(--second-bg) !important;
+}
+
+.lobby__box td {
+	border-color: var(--border) !important;
+}
+
+.lobby__support a, .ublog-post-card{
+	background: var(--second-bg) !important;
+	transition: 0.2s;
+}
+
+.lobby__support a:hover, .ublog-post-card:hover {
+	scale: 1.05 !important;
 }

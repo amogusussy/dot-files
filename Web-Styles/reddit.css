@@ -1,36 +1,18 @@
-:root {
-	--main-bg: #1a1b26;
-	--main-fg: #c0caf5;
-	--post-bg: #1a1b26;
-	--border: #24283b;
-	--second-bg: #161620;
-	--grey: #565f89;
-	--placeholder: #c0caf578;
-
-	--purple: #bb9af7;
-	--red: #f7768e;
-	--orange: #ff9e64;
-	--yellow: #e0af68;
-	--green: #9ece6a;
-	--blue: #7aa2f7;
-	--turquoise: #2ac3de;
-	--light-blue: #73daca;
-}
-
-body {
+body, .titlebox form.toggle, .leavemoderator, #sr-header-area, .dropdown.srdrop .selected, .side, .morelink, .morelink a,
+.hover-bubble, .author-tooltip__head, .hover-bubble *, .author-tooltip__head *{
 	background: var(--main-bg) !important;
 	color: var(--main-fg) !important;
 }
 
-a {
-	color: var(--blue) !important;
+a, .tagline a, .search-result-meta a, .comment.collapsed .tagline, .comment.collapsed .tagline a, .comment.collapsed .search-result-meta, .comment.collapsed .search-result-meta a {
+	color: var(--accent) !important;
 }
 
-.md, .user, .domain, .titlebox h1 a, .titlebox .bottom, .sidecontentbox .title h1, .link .rank, .link .score, .message.new > .entry .head, .separator, .md blockquote, .md del, .nextprev, .next-suggestions, .media-gallery .gallery-nav-disabled {
+.md, .user, .domain, .titlebox h1 a, .titlebox .bottom, .sidecontentbox .title h1, .link .rank, .link .score, .message.new > .entry .head, .separator, .md blockquote, .md del, .nextprev, .next-suggestions, .media-gallery .gallery-nav-disabled, .commentsignupbar__container .commentsignupbar__desc, .commentsignupbar__container .commentsignupbar__title {
 	color: var(--main-fg) !important;
 }
 
-.help-toggle, .reddiquette, .flair, #sr-header-area .redesign-beta-optin, .giftgold, .trophy-area, .grippy, .listing-chooser, div.create > div:nth-child(2), #sr-more-link, .morelink .nub, .report-button, .give-gold-button, .archived-infobar.with-icon::before, .read-next-container {
+.help-toggle, .reddiquette, .flair, #sr-header-area .redesign-beta-optin, .giftgold, .trophy-area, .grippy, .listing-chooser, div.create > div:nth-child(2), #sr-more-link, .morelink .nub, .report-button, .give-gold-button, .archived-infobar.with-icon::before, .read-next-container, .debuginfo, #chat-app, .footer.rounded  {
 	display: none !important;
 }
 
@@ -38,67 +20,14 @@ a {
 	color: var(--grey) !important;
 }
 
-.tagline a, .search-result-meta a {
-	color: var(--blue) !important;
+.child, .child .child .child, .child .child .child .child .child, .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child, .interstitial-subreddit-description, .admin_takedown  {
+	background: var(--second-bg) !important;
 }
 
-.child, .interstitial-subreddit-description, .admin_takedown  {
-	background: var(--second-bg);
+.child .child, .child .child .child .child, .child .child .child .child .child .child, .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child, .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child {
+	background: var(--main-bg) !important;
 }
-.child .child  {
-	background: var(--main-bg);
-}
-.child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--main-bg);
-}
-.child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child .child  {
-	background: var(--second-bg);
-}
+
 
 .parent {
 	padding-top: 15px !important;
@@ -107,10 +36,6 @@ a {
 .comment .child, .comment .showreplies {
 	border-left: 1px solid var(--grey) !important;
 	border-top: 1px solid var(--grey) !important;
-}
-
-.comment.collapsed .tagline, .comment.collapsed .tagline a, .comment.collapsed .search-result-meta, .comment.collapsed .search-result-meta a {
-	color: var(--blue) !important;
 }
 
 textarea, input {
@@ -128,31 +53,17 @@ textarea:focus, input:focus {
 	outline: none !important;
 }
 
-.side, .morelink, .morelink a {
-	background: var(--main-bg) !important;
-	color: var(--main-fg) !important;
-}
-
 #search input[type="text"] {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 	border: 1px solid var(--grey);
 }
 
-.linkinfo {
+.linkinfo, .pinnable-content.pinned, .usertext.border .usertext-body  {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 }
 
-.titlebox form.toggle, .leavemoderator, #sr-header-area, .dropdown.srdrop .selected {
-	background: var(--main-bg);
-	color: var(--main-fg) !important;
-}
-
-.pinnable-content.pinned, .usertext.border .usertext-body {
-	background: var(--second-bg) !important;
-	color: var(--main-fg) !important;
-}
 
 #header {
 	background: var(--main-bg) !important;
@@ -188,17 +99,17 @@ textarea:focus, input:focus {
 	border: 1px solid var(--main-fg) !important;
 }
 
-.nsfw-stamp, .error {
+.nsfw-stamp, .error, .sr-list .selected a {
 	color: var(--red) !important;
 }
 
-.link .usertext-body .md {
+.link .usertext-body .md, .crosspost-preview, .drop-choices, .form-bar, .roundfield {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 	border-color: var(--grey) !important;
 }
 
-button[type="submit"], .next-button a, button.cancel {
+button[type="submit"], .next-button a, .prev-button a, button.cancel {
 	background: var(--second-bg) !important;
 	color: var(--main-fg) !important;
 	border: 1px solid var(--grey) !important;
@@ -224,7 +135,7 @@ button[type="submit"], .next-button a, button.cancel {
 }
 
 .tabmenu li.selected a {
-	border-color: var(--blue) !important;
+	border-color: var(--accent) !important;
 }
 
 .message-count {
@@ -256,11 +167,6 @@ button[type="submit"], .next-button a, button.cancel {
 	height: fit-content;
 	min-height: 200px;
 	padding: 10px;
-}
-
-.crosspost-preview, .drop-choices, .form-bar, .roundfield {
-	background: var(--second-bg) !important;
-	border-color: var(--grey) !important;
 }
 
 .gray {
@@ -317,8 +223,6 @@ button[type="submit"], .next-button a, button.cancel {
 }
 
 .hover-bubble, .author-tooltip__head, .hover-bubble *, .author-tooltip__head * {
-	background: var(--main-bg) !important;
-	color: var(--main-fg) !important;
 	border-color: var(--border) !important;
 }
 
@@ -332,18 +236,6 @@ button[type="submit"], .next-button a, button.cancel {
 	background: var(--border) !important;
 }
 
-#chat-app {
-	display: none !important;
-}
-
-.footer.rounded {
-	display: none !important;
-}
-
-.sr-list .selected a {
-	color: var(--red) !important;
-}
-
 .md .-lists, .md ul, .md ol {
 	padding-left: 20px !important;
 }
@@ -354,11 +246,15 @@ button[type="submit"], .next-button a, button.cancel {
 	border: 1px solid var(--border) !important;
 }
 
-.commentsignupbar__container .commentsignupbar__desc, .commentsignupbar__container .commentsignupbar__title {
-	color: var(--main-fg) !important;
-}
-
 .users-online::before {
 	background: var(--green) !important;
 	border-radius: 50%;
+}
+
+.nextprev .separator, .next-suggestions .separator {
+	border-left: 1px solid var(--main-fg) !important;
+}
+
+.message_field .roundfield {
+	width: fit-content !important;
 }

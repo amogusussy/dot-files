@@ -1,0 +1,45 @@
+:root {
+	--main-bg: #1a1b26;
+	--main-fg: #c0caf5;
+	--border: #24283b;
+	--second-bg: #161620;
+	--grey: #565f89;
+	--placeholder: #c0caf578;
+
+	--purple: #bb9af7;
+	--red: #f7768e;
+	--orange: #ff9e64;
+	--yellow: #e0af68;
+	--green: #9ece6a;
+	--blue: #7aa2f7;
+	--turquoise: #2ac3de;
+	--light-blue: #73daca;
+
+	--accent: var(--orange);
+}
+
+::selection {
+	background: var(--accent) !important;
+	color: var(--main-bg) !important;
+}
+
+/* Gruvbox
+:root {
+	--main-bg: #3c3836;
+	--main-fg: #f7dba4;
+	--post-bg: #282828;
+	--border: #a28e72;
+	--second-bg: #282828;
+	--grey: #837366;
+	--placeholder: #8373669e;
+
+	--purple: #b16286;
+	--red: #ff4c3c;
+	--orange: #fc802d;
+	--yellow: #d79921;
+	--green: #95bd77;
+	--blue: #458588;
+	--turquoise: #83a598;
+	--light-blue: #83a598;
+}
+*/
