@@ -144,13 +144,13 @@ static const Key keys[] = {
     { NOMOD,                            XF86XK_AudioNext,          spawn,  SHCMD("/home/matthew/.config/chadwm/scripts/audio next") },
 
     // screenshot fullscreen and cropped
-    { MODKEY|ControlMask,               XK_u,       spawn,            SHCMD("maim | xclip -selection clipboard -t image/png")},
-    { MODKEY,                           XK_u,       spawn,            SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-    { MODKEY,                           XK_space,   spawn,            SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
-    { Mod1Mask,				                  XK_Delete,  spawn,		        SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
-    { MODKEY,                           XK_a,  	    spawn,            SHCMD("alacritty -e pulsemixer")},
-    { MODKEY|ShiftMask,                 XK_a,  	    spawn,            SHCMD("fixaudio")},
+    { MODKEY|ControlMask,               XK_u,       spawn,          SHCMD("maim | xclip -selection clipboard -t image/png")},
+    { MODKEY,                           XK_u,       spawn,          SHCMD("maim --select | xclip -selection clipboard -t image/png")},
+    { MODKEY,                           XK_space,   spawn,          SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
+    { Mod1Mask,				                  XK_Delete,  spawn,		      SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
+    { MODKEY,                           XK_a,  	    spawn,          SHCMD("alacritty -e pulsemixer")},
+    { MODKEY|ShiftMask,                 XK_a,  	    spawn,          SHCMD("fixaudio")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
