@@ -233,6 +233,15 @@ mpv() {
 scrot() {
   /bin/scrot -F ~/Pictures/screenshots/$(date "+%s").png $@
 }
+#
+# nvim() {
+#   if [[ $(stat $1 --format="%u") == $(id -u) ]]; then
+#     /bin/nvim $@
+#   else
+#     printf "You don't have write access. Retry with root privs\n"
+#   fi
+# }
+#
 
 printf "\e]0;haxxor terminal"
 export EDITOR='nvim'
