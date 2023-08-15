@@ -8,11 +8,10 @@ set pages-per-row 1
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
-set smooth-scroll true
 
 # Attempt to recreate Tokyo Night in Zathura
 
-set default-bg                  "rgba(24, 24, 32, 1)"
+set default-bg                  "#181820"
 set default-fg                  "#a9b1d6"
 
 set statusbar-fg                "#a9b1d6"
@@ -48,3 +47,5 @@ set recolor-keephue             "false"
 map i recolor
 
 set font "JetBrains Mono Regular 12"
+
+set selection-clipboard "false"

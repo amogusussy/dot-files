@@ -2,9 +2,9 @@
 cp ~/.config/mpv/*.conf ./.config/mpv/
 cp ~/.bashrc .
 
-directories=("chadwm" "zathura" "rofi" "nvim" "alacritty")
+directories=( chadwm zathura rofi nvim alacritty )
 
-for directory in "${directories}"
+for directory in "${directories[@]}"
 do
   echo $directory
   rm -rf ./.config/$directory

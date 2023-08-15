@@ -18,7 +18,7 @@ font:
     y: 60
 
 scrolling:
-  history: 5000
+  history: 100000
 
 colors:
     primary:
@@ -45,11 +45,14 @@ colors:
 
 
 window:
-  # decorations: none
-  #startup_mode: Maximized
  padding:
    x: 8
    y: 5
 
+cursor:
+  style: Block
+
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
+mouse_bindings:
+  - { mouse: Middle, chars: "" }
