@@ -4,7 +4,7 @@ cp ~/.bashrc .
 
 directories=("chadwm" "zathura" "rofi" "nvim" "alacritty")
 
-for directory in ${directories}
+for directory in "${directories}"
 do
   rm -rf ./.config/$directory
   cp -r ~/.config/$directory ./.config/
