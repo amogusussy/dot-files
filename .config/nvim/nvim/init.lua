@@ -43,14 +43,14 @@ lspconfig.emmet_ls.setup({
 })
 
 lspconfig.pylsp.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+  -- on_attach = on_attach,
+  -- capabilities = capabilities,
   filetypes = { "py", "python" },
   settings = {
     pylsp = {
       plugins = {
         pycodestyle = {
-          ignore = { "E501" },
+          ignore = {"E501"},
         }
       }
     }
