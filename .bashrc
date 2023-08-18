@@ -29,15 +29,7 @@ alias vm='nvim'
 alias vim='nvim'
 
 # Kill Commands
-# alias ks='pkill steam'
-ks() {
-  read -p "Kill Steam? " yayornay
-  if [ "$yayornay" == "y" ]; then
-    pkill steam
-  else
-    ls
-  fi;
-}
+alias ks='pkill steam'
 alias kq='pkill qbittorrent'
 alias ke='pkill electron'
 alias kf='pkill firefox'
