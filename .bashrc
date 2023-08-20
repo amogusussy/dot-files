@@ -225,15 +225,17 @@ mpv() {
 scrot() {
   /bin/scrot -F ~/Pictures/screenshots/$(date "+%s").png $@
 }
-#
-# nvim() {
-#   if [[ $(stat $1 --format="%u") == $(id -u) ]]; then
-#     /bin/nvim $@
-#   else
-#     printf "You don't have write access. Retry with root privs\n"
-#   fi
-# }
-#
+
+dbus-start () {
+  doas mkdir -p /run/user/1000
+  doas chown -R matthew /run/user/1000/
+  sleep 2
+
+  ~/.config/chadwm/scripts/pipewire-start &
+  sleep 8
+
+  reverse-output
+}
 
 printf "\e]0;haxxor terminal"
 export EDITOR='nvim'
