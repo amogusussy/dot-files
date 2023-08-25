@@ -22,7 +22,7 @@ run_command(const char *cmd)
 		return NULL;
 	}
 	if (!p)
-		return NULL;
+		return "";
 
 	if ((p = strrchr(buf, '\n')))
 		p[0] = '\0';
