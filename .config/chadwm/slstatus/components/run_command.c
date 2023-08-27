@@ -11,7 +11,8 @@ run_command(const char *cmd)
 	char *p;
 	FILE *fp;
 
-	if (!(fp = popen(cmd, "r"))) {
+  fp = popen(cmd, "r");
+	if (!fp) {
 		warn("popen '%s':", cmd);
 		return NULL;
 	}

@@ -226,7 +226,7 @@ scrot() {
   /bin/scrot -F ~/Pictures/screenshots/$(date "+%s").png $@
 }
 
-dbus-start () {
+startdbus() {
   doas mkdir -p /run/user/1000
   doas chown -R matthew /run/user/1000/
   sleep 2
