@@ -8,25 +8,25 @@
 const char *
 run_command(const char *cmd)
 {
-	char *p;
-	FILE *fp;
+  char *p;
+  FILE *fp;
 
   fp = popen(cmd, "r");
-	if (!fp) {
-		warn("popen '%s':", cmd);
-		return NULL;
-	}
+  if (!fp) {
+    warn("popen '%s':", cmd);
+    return NULL;
+  }
 
-	p = fgets(buf, sizeof(buf) - 1, fp);
-	if (pclose(fp) < 0) {
-		warn("pclose '%s':", cmd);
-		return NULL;
-	}
-	if (!p)
-		return "";
+  p = fgets(buf, sizeof(buf) - 1, fp);
+  if (pclose(fp) < 0) {
+    warn("pclose '%s':", cmd);
+    return NULL;
+  }
+  if (!p)
+    return "";
 
-	if ((p = strrchr(buf, '\n')))
-		p[0] = '\0';
+  if ((p = strrchr(buf, '\n')))
+    p[0] = '\0';
 
-	return buf[0] ? buf : NULL;
+  return buf[0] ? buf : NULL;
 }

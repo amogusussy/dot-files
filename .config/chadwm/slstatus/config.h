@@ -81,10 +81,10 @@ static const char unknown_str[] = "*_*";
 #define RED "#f7768e"
 
 static const struct arg args[] = {
-	/* function     colors              format                                      argument */
+  /* function     colors              format                                      argument */
   { run_command,  TEMP(BLACK, WHITE)  "%s",                                       "/home/matthew/.config/chadwm/scripts/volume"},
   { run_command,  TEMP(BLACK, GREEN)  "%s",                                       "/home/matthew/.config/chadwm/scripts/show_song"},
   { cpu_perc,     TEMP(GREEN, BLACK)  " CPU "   TEMP(GREY, WHITE) " %s ",         NULL },
-	{ ram_used,     TEMP(BLACK, BLUE)   "   %s ",	                                  NULL },
-	{ datetime,     TEMP(BLUE, BLACK)   " 󱑆 "     TEMP(BLUE, BLACK) " %s ",         "%H:%M" },
+  { ram_used,     TEMP(BLACK, BLUE)   "   %s ",                                    NULL },
+  { datetime,     TEMP(BLUE, BLACK)   " 󱑆 "     TEMP(BLUE, BLACK) " %s ",         "%H:%M" },
 };

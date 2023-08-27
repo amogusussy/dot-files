@@ -7,13 +7,13 @@
 
 const char *datetime(const char *fmt)
 {
-	time_t t;
+  time_t t;
 
-	t = time(NULL);
-	if (!strftime(buf, sizeof(buf), fmt, localtime(&t))) {
-		warn("strftime: Result string exceeds buffer size");
-		return NULL;
-	}
+  t = time(NULL);
+  if (!strftime(buf, sizeof(buf), fmt, localtime(&t))) {
+    warn("strftime: Result string exceeds buffer size");
+    return NULL;
+  }
 
-	return buf;
+  return buf;
 }

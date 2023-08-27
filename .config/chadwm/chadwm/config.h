@@ -78,8 +78,8 @@ static const int ulineall               = 0; /* 1 to show underline on all tags,
 
 static const Rule rules[] = {
     /* xprop(1):
-     *	WM_CLASS(STRING) = instance, class
-     *	WM_NAME(STRING) = title
+     *  WM_CLASS(STRING) = instance, class
+     *  WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
@@ -148,9 +148,9 @@ static const Key keys[] = {
     { MODKEY,                           XK_u,       spawn,          SHCMD("maim --select | xclip -selection clipboard -t image/png")},
     { MODKEY,                           XK_space,   spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
-    { Mod1Mask,				                  XK_Delete,  spawn,		      SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
-    { MODKEY,                           XK_a,  	    spawn,          SHCMD("alacritty -e pulsemixer")},
-    { MODKEY|ShiftMask,                 XK_a,  	    spawn,          SHCMD("fixaudio")},
+    { Mod1Mask,                          XK_Delete,  spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu")},
+    { MODKEY,                           XK_a,        spawn,          SHCMD("alacritty -e pulsemixer")},
+    { MODKEY|ShiftMask,                 XK_a,        spawn,          SHCMD("fixaudio")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },

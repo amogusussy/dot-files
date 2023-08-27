@@ -13,111 +13,111 @@ char *argv0;
 static void
 verr(const char *fmt, va_list ap)
 {
-	vfprintf(stderr, fmt, ap);
+  vfprintf(stderr, fmt, ap);
 
-	if (fmt[0] && fmt[strlen(fmt) - 1] == ':') {
-		fputc(' ', stderr);
-		perror(NULL);
-	} else {
-		fputc('\n', stderr);
-	}
+  if (fmt[0] && fmt[strlen(fmt) - 1] == ':') {
+    fputc(' ', stderr);
+    perror(NULL);
+  } else {
+    fputc('\n', stderr);
+  }
 }
 
 // void
 // warn(const char *fmt, ...)
 // {
-// 	va_list ap;
+//   va_list ap;
 //
-// 	va_start(ap, fmt);
-// 	verr(fmt, ap);
-// 	va_end(ap);
+//   va_start(ap, fmt);
+//   verr(fmt, ap);
+//   va_end(ap);
 // }
 //
 void
 die(const char *fmt, ...)
 {
-	va_list ap;
+  va_list ap;
 
-	va_start(ap, fmt);
-	verr(fmt, ap);
-	va_end(ap);
+  va_start(ap, fmt);
+  verr(fmt, ap);
+  va_end(ap);
 
-	exit(1);
+  exit(1);
 }
 
 static int
 evsnprintf(char *str, size_t size, const char *fmt, va_list ap)
 {
-	int ret;
+  int ret;
 
-	ret = vsnprintf(str, size, fmt, ap);
+  ret = vsnprintf(str, size, fmt, ap);
 
-	if (ret < 0) {
-		warn("vsnprintf:");
-		return -1;
-	} else if ((size_t)ret >= size) {
-		warn("vsnprintf: Output truncated");
-		return -1;
-	}
+  if (ret < 0) {
+    warn("vsnprintf:");
+    return -1;
+  } else if ((size_t)ret >= size) {
+    warn("vsnprintf: Output truncated");
+    return -1;
+  }
 
-	return ret;
+  return ret;
 }
 
 int
 esnprintf(char *str, size_t size, const char *fmt, ...)
 {
-	va_list ap;
-	int ret;
+  va_list ap;
+  int ret;
 
-	va_start(ap, fmt);
-	ret = evsnprintf(str, size, fmt, ap);
-	va_end(ap);
+  va_start(ap, fmt);
+  ret = evsnprintf(str, size, fmt, ap);
+  va_end(ap);
 
-	return ret;
+  return ret;
 }
 
 const char *
 bprintf(const char *fmt, ...)
 {
-	va_list ap;
-	int ret;
+  va_list ap;
+  int ret;
 
-	va_start(ap, fmt);
-	ret = evsnprintf(buf, sizeof(buf), fmt, ap);
-	va_end(ap);
+  va_start(ap, fmt);
+  ret = evsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
 
-	return (ret < 0) ? NULL : buf;
+  return (ret < 0) ? NULL : buf;
 }
 
 const char *
 fmt_human(uintmax_t num, int base)
 {
-	double scaled;
-	unsigned int i;
+  double scaled;
+  unsigned int i;
   const char *prefix[2] = { "M", "G" };
 
-	scaled = num;
-	for (i = 0; i < 4 && scaled >= base; i++)
-		scaled /= base;
+  scaled = num;
+  for (i = 0; i < 4 && scaled >= base; i++)
+    scaled /= base;
 
-	return bprintf("%.1f%s", scaled, prefix[i - 2]);
+  return bprintf("%.1f%s", scaled, prefix[i - 2]);
 }
 
 int
 pscanf(const char *path, const char *fmt, ...)
 {
-	FILE *fp;
-	va_list ap;
-	int n;
+  FILE *fp;
+  va_list ap;
+  int n;
 
-	if (!(fp = fopen(path, "r"))) {
-		warn("fopen '%s':", path);
-		return -1;
-	}
-	va_start(ap, fmt);
-	n = vfscanf(fp, fmt, ap);
-	va_end(ap);
-	fclose(fp);
+  if (!(fp = fopen(path, "r"))) {
+    warn("fopen '%s':", path);
+    return -1;
+  }
+  va_start(ap, fmt);
+  n = vfscanf(fp, fmt, ap);
+  va_end(ap);
+  fclose(fp);
 
-	return (n == EOF) ? -1 : n;
+  return (n == EOF) ? -1 : n;
 }
