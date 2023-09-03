@@ -2,7 +2,7 @@
 cp ~/.config/mpv/*.conf ./.config/mpv/
 cp ~/.bashrc .
 
-directories=( chadwm zathura rofi nvim alacritty )
+directories=( "chadwm" "zathura" "rofi" "nvim" "alacritty" "gallery-dl")
 
 for directory in "${directories[@]}"
 do

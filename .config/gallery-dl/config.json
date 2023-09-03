@@ -1,0 +1,9 @@
+{
+    "extractor": {
+        "base-directory": "/mnt/HoarderDrive/Archive/gallery-dl/",
+        "4chan": {
+            "directory": ["4chan", "{board}", "{thread} - {title}"],
+            "filename": "{time}.{filename}{ext}"
+        }
+    }
+}
