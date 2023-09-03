@@ -18,8 +18,9 @@ alias ':q'='exit'
 alias ':q!'='exit'
 alias qq='exit'
 alias python='python3'
-alias grep="grep --color=auto -n"
+alias grep='grep --color=auto -n'
 alias fdd=fd
+alias wc-l='wc -l'
 
 # Vim aliases 
 alias vim='nvim'
