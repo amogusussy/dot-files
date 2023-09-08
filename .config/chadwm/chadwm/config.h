@@ -83,6 +83,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+    {  "ksnip",     NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",  NULL,       NULL,       256,          0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
@@ -126,7 +127,7 @@ static const Layout layouts[] = {
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
     { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-#define NOMOD NULL
+#define NOMOD 0
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
