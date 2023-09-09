@@ -1307,8 +1307,6 @@ geticonprop(Window win, unsigned int *picw, unsigned int *pich)
   return ret;
 }
 
-
-
 void drawbars(void) {
   Monitor *m;
 
