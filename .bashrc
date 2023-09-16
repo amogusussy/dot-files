@@ -30,7 +30,7 @@ alias vm='nvim'
 alias vim='nvim'
 
 # Kill Commands
-alias ks='pkill steam'
+alias ks='pkill steam && sleep 2 && pkill steam'
 alias kq='pkill qbittorrent'
 alias ke='pkill electron'
 alias kf='pkill firefox'
@@ -207,7 +207,7 @@ chadwm() {
 # }
 
 mpv() {
-  local replacements=("piped.kavin.rocks" "piped.projectsegfau.lt" "piped.in.projectsegfau.lt" "piped.video" "yewtu.be" "yt.revvy.de")
+  local replacements=("piped.kavin.rocks" "piped.projectsegfau.lt" "piped.in.projectsegfau.lt" "piped.video" "yewtu.be" "yt.revvy.de" "piped.yt")
   local args=("$@")
   local replaced_args=()
 

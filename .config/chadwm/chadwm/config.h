@@ -82,8 +82,8 @@ static const Rule rules[] = {
      *  WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
-    { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-    {  "ksnip",     NULL,       NULL,       0,            0,           1,           -1 },
+    // { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+    { "ksnip",    NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",  NULL,       NULL,       256,          0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
