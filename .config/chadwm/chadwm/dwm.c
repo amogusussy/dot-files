@@ -66,7 +66,7 @@
 #define TAGMASK ((1 << LENGTH(tags)) - 1)
 #define TAGSLENGTH              (LENGTH(tags))
 #define TEXTW(X) (drw_fontset_getwidth(drw, (X)) + lrpad)
-#define MAXTABS 50
+#define MAXTABS 6
 
 #define SYSTEM_TRAY_REQUEST_DOCK 0
 
