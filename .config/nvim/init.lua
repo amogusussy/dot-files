@@ -42,20 +42,69 @@ lspconfig.emmet_ls.setup({
     }
 })
 
-lspconfig.pylsp.setup({
+-- lspconfig.pylsp.setup({
+--   -- on_attach = on_attach,
+--   -- capabilities = capabilities,
+--   filetypes = { "py", "python" },
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         plugins = {
+--         -- formatter options
+--         black = { enabled = true },
+--         autopep8 = { enabled = true },
+--         yapf = { enabled = true },
+--         -- linter options
+--         pycodestyle = { ignore = { "E501" } },
+--         pylint = { enabled = true, executable = "pylint" },
+--         pyflakes = { enabled = true },
+--         -- type checker
+--         pylsp_mypy = { enabled = true },
+--         -- auto-completion options
+--         jedi_completion = { fuzzy = true },
+--         -- import sorting
+--         pyls_isort = { enabled = true },
+--       }
+--     }
+--   }
+-- }
+-- })
+--
+
+lspconfig = require("lspconfig")
+lspconfig.pylsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "py", "python" },
   settings = {
     pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = { "E501" },
-        }
-      }
-    }
-  }
-})
+    plugins = {
+      -- formatter options
+      black = { enabled = true },
+      autopep8 = { enabled = false },
+      yapf = { enabled = false },
+      -- linter options
+      pylint = {
+        enabled = true,
+        executable = "pylint",
+        args = { '--ignore=C0111', }
+      },
+
+      pyflakes = { enabled = false },
+      pycodestyle = { enabled = false },
+      -- type checker
+      pylsp_mypy = { enabled = true },
+      -- auto-completion options
+      jedi_completion = { fuzzy = true },
+      -- import sorting
+      pyls_isort = { enabled = true },
+    },
+    },
+  },
+  flags = {
+      debounce_text_changes = 200,
+  },
+}
+
 
 lspconfig.rust_analyzer.setup({
   -- Server-specific settings. See `:help lspconfig-setup`
