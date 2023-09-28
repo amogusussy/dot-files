@@ -30,7 +30,7 @@ alias vm='nvim'
 alias vim='nvim'
 
 # Kill Commands
-alias ks='pkill steam && sleep 2 && pkill steam'
+alias ks='pkill steam && pkill steamwebhelper'
 alias kq='pkill qbittorrent'
 alias ke='pkill electron'
 alias kf='pkill firefox'
@@ -171,8 +171,7 @@ rmnvswap() {
 }
 
 paste-file() {
-  n="file=@$1"
-  curl -F $n https://0x0.st
+  curl -F "file=@$1" https://0x0.st
 }
 
 backup() {
