@@ -84,9 +84,9 @@ lspconfig.pylsp.setup {
       yapf = { enabled = false },
       -- linter options
       pylint = {
-        enabled = true,
+        enabled = false,
         executable = "pylint",
-        args = { '--ignore=C0111', }
+        args = { '--disable=C0111,C0116,C0103', }
       },
 
       pyflakes = { enabled = false },
