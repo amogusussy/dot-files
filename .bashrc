@@ -6,8 +6,13 @@ fi
 
 # Run startx when in tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec startx &
-    sleep 20 && reverse-output
+  # export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+  # if ! test -d "${XDG_RUNTIME_DIR}"; then
+  #   mkdir "${XDG_RUNTIME_DIR}"
+  #   chmod 0700 "${XDG_RUNTIME_DIR}"
+  # fi
+  exec startx &
+  sleep 20 && reverse-output
 fi
 
 # General aliases
@@ -77,10 +82,10 @@ complete -cf type
 complete -d cd
 
 reverse-output() {
-  if [[ "$(pactl get-default-sink)" = "reverse-stereo" ]]; then
-    printf "Audio already reversed\n"
-    return
-  fi
+  # if [[ "$(pactl get-default-sink)" = "reverse-stereo" ]]; then
+  #   printf "Audio already reversed\n"
+  #   return
+  # fi
   pactl load-module module-remap-sink \
     sink_name=reverse-stereo \
     master=0 \
