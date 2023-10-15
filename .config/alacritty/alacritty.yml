@@ -11,7 +11,7 @@ font:
     family: JetBrains Mono
     style: Italic
 
-  size: 12.0
+  size: 10.0
 
   padding:
     x: 20

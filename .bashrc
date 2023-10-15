@@ -12,7 +12,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   #   chmod 0700 "${XDG_RUNTIME_DIR}"
   # fi
   exec startx &
-  sleep 20 && reverse-output
 fi
 
 # General aliases
@@ -80,21 +79,6 @@ complete -cf cpulimit
 complete -cf torsocks
 complete -cf type
 complete -d cd
-
-reverse-output() {
-  # if [[ "$(pactl get-default-sink)" = "reverse-stereo" ]]; then
-  #   printf "Audio already reversed\n"
-  #   return
-  # fi
-  pactl load-module module-remap-sink \
-    sink_name=reverse-stereo \
-    master=0 \
-    channels=2 \
-    master_channel_map=front-right,front-left \
-    channel_map=front-left,front-right
-
-  pactl set-default-sink reverse-stereo
-}
 
 shred() {
   for i in "$@"
@@ -238,9 +222,6 @@ startdbus() {
   sleep 2
 
   ~/.config/chadwm/scripts/pipewire-start &
-  sleep 8
-
-  reverse-output
 }
 
 printf "\e]0;haxxor terminal"

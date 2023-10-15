@@ -5,7 +5,7 @@
 #define GAP 0
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int default_border = 1;   /* to switch back to default border after dynamic border resizing via keybinds */
+static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = GAP;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = GAP;       /* vert inner gap between windows */
