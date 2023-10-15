@@ -151,7 +151,6 @@ clear() {
 update() {
   doas xbps-install -Syu &&
   flatpak update -y
-  pip install --upgrade yt-dlp
 }
 
 rmnvswap() {
