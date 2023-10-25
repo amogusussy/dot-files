@@ -46,7 +46,7 @@ set recolor-keephue             "false"
 
 map i recolor
 
-set font "JetBrains Mono Regular 18"
+set font "JetBrains Mono Regular 12"
 
 set selection-clipboard clipboard
 
