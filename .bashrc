@@ -79,6 +79,7 @@ complete -cf cpulimit
 complete -cf torsocks
 complete -cf type
 complete -d cd
+source /usr/share/bash-completion/completions/git
 
 shred() {
   for i in "$@"
@@ -147,26 +148,26 @@ chadwm() {
   cd ~/.config/chadwm/chadwm/
   nvim ./config.h +NvimTreeToggle
 }
-#
-# function rm () {
-#   local args=()
-#   for arg in "$@"; do
-#     if [[ $arg == -* ]]; then
-#       # this argument starts with a dash, so we assume it's an option and skip it
-#       continue
-#     fi
-#     args+=("$arg")
-#   done
-#
-#   if [[ ${#args[@]} -eq 0 ]]; then
-#     echo "Error: No files or directories specified"
-#     return 1
-#   fi
-#
-#   for arg in "${args[@]}"; do
-#     gio trash "$arg"
-#   done
-# }
+
+trash_rm () {
+  local args=()
+  for arg in "$@"; do
+    if [[ $arg == -* ]]; then
+      # this argument starts with a dash, so we assume it's an option and skip it
+      continue
+    fi
+    args+=("$arg")
+  done
+
+  if [[ ${#args[@]} -eq 0 ]]; then
+    echo "Error: No files or directories specified"
+    return 1
+  fi
+
+  for arg in "${args[@]}"; do
+    gio trash "$arg"
+  done
+}
 
 mpv() {
   local replacements=("piped.kavin.rocks" "piped.projectsegfau.lt" "piped.in.projectsegfau.lt" "piped.video" "yewtu.be" "yt.revvy.de" "piped.yt")

@@ -90,7 +90,7 @@ lspconfig.pylsp.setup {
       },
 
       pyflakes = { enabled = false },
-      pycodestyle = { enabled = false },
+      pycodestyle = { enabled = true },
       -- type checker
       pylsp_mypy = { enabled = true },
       -- auto-completion options
