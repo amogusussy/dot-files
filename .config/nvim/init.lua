@@ -32,7 +32,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 lspconfig.emmet_ls.setup({
     -- on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "htmldjango" },
+    filetypes = { "css", "eruby", "html", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "htmldjango" },
     init_options = {
       html = {
         options = {
